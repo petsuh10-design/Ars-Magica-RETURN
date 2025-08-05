@@ -1,0 +1,41 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="MIT"
+issueTrackerURL="https://github.com/ArsMagica2Return/Ars-Magica-RETURN/issues"
+
+[[mods]]
+modId="arsmagica2return"
+version="${file.jarVersion}"
+displayName="Ars Magica 2 Return"
+updateJSONURL="https://github.com/ArsMagica2Return/Ars-Magica-RETURN/releases"
+displayURL="https://github.com/ArsMagica2Return/Ars-Magica-RETURN"
+logoFile="arsmagica2_logo.png"
+credits="Original Ars Magica 2 by Mithion, Ported and Enhanced by ArsMagica2Return Team"
+authors="ArsMagica2Return Team"
+description='''
+Ars Magica 2 Return - це повне відродження легендарного магічного моду для Minecraft.
+Мод додає глибоку систему магії з настроюваними заклинаннями, магічними блоками,
+артефактами та багато іншого. Створюйте власні заклинання, досліджуйте магічні
+таємниці та станьте майстром магічних мистецтв!
+'''
+
+[[dependencies.arsmagica2return]]
+modId="forge"
+mandatory=true
+versionRange="[47,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.arsmagica2return]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.20.1,1.21)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.arsmagica2return]]
+modId="curios"
+mandatory=false
+versionRange="[5.4.7,)"
+ordering="AFTER"
+side="BOTH"
