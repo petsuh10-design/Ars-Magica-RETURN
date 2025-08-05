@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "S": {
+      "tag": "forge:stone"
+    },
+    "V": {
+      "tag": "forge:dusts/vinteum"
+    }
+  },
+  "pattern": [
+    "VSV"
+  ],
+  "result": {
+    "count": 16,
+    "item": "arsmagicalegacy:magic_wall"
+  }
+}

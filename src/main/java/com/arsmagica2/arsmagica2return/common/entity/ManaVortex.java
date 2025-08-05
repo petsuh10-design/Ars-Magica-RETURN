@@ -1,0 +1,95 @@
+package com.arsmagica2.arsmagica2return.common.entity;
+
+import com.arsmagica2.arsmagica2return.api.ArsMagicaAPI;
+import com.arsmagica2.arsmagica2return.common.init.AMAttributes;
+import com.arsmagica2.arsmagica2return.network.SpawnAMParticlesPacket;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.protocol.game.ClientGamePacketListener;
+import net.minecraft.network.protocol.game.ClientboundAddEntityPacket;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.Vec3;
+import net.neoforged.neoforge.network.PacketDistributor;
+
+public class ManaVortex extends Entity {
+    private static final EntityDataAccessor<Integer> DURATION = SynchedEntityData.defineId(ManaVortex.class, EntityDataSerializers.INT);
+    private static final EntityDataAccessor<Float> MANA = SynchedEntityData.defineId(ManaVortex.class, EntityDataSerializers.FLOAT);
+
+    public ManaVortex(EntityType<? extends ManaVortex> type, Level level) {
+        super(type, level);
+    }
+
+    @Override
+    protected void defineSynchedData() {
+        entityData.define(DURATION, 50 + level().getRandom().nextInt(250));
+        entityData.define(MANA, 0f);
+    }
+
+    @Override
+    protected void readAdditionalSaveData(CompoundTag pCompound) {
+        CompoundTag tag = pCompound.getCompound(ArsMagicaAPI.MOD_ID);
+        entityData.set(DURATION, tag.getInt("Duration"));
+        entityData.set(MANA, tag.getFloat("Mana"));
+    }
+
+    @Override
+    protected void addAdditionalSaveData(CompoundTag pCompound) {
+        CompoundTag tag = pCompound.getCompound(ArsMagicaAPI.MOD_ID);
+        tag.putInt("Duration", entityData.get(DURATION));
+        tag.putFloat("Mana", entityData.get(MANA));
+    }
+
+    @Override
+    public boolean hurt(DamageSource pSource, float pAmount) {
+        return false;
+    }
+
+    @Override
+    public Packet<ClientGamePacketListener> getAddEntityPacket() {
+        return new ClientboundAddEntityPacket(this);
+    }
+
+    @Override
+    public void tick() {
+        super.tick();
+        tickCount++;
+        Level level = level();
+        if (level.isClientSide()) return;
+        int duration = getDuration();
+        if (duration - tickCount > 30) {
+            for (LivingEntity e : level.getEntitiesOfClass(LivingEntity.class, getBoundingBox().inflate(4, 4, 4))) {
+                if (e.getAttribute(AMAttributes.MAX_MANA.value()) == null) continue;
+                var helper = ArsMagicaAPI.get().getManaHelper();
+                float stolen = Math.min(helper.getMana(e), helper.getMaxMana(e) / 100f);
+                entityData.set(MANA, entityData.get(MANA) + stolen);
+                helper.setMana(e, helper.getMana(e) - stolen);
+                Vec3 movement = e.position().subtract(position()).normalize();
+                setDeltaMovement(movement.x * 0.075f, movement.y * 0.075f, movement.z * 0.075f);
+            }
+            moveTo(position().add(getDeltaMovement()));
+            PacketDistributor.NEAR.with(new PacketDistributor.TargetPoint(getX(), getY(), getZ(), 128, level.dimension())).send(new SpawnAMParticlesPacket(this));
+        }
+        if (duration - tickCount <= 20) {
+            this.setBoundingBox(getBoundingBox().inflate(-0.05f));
+        }
+        if (duration - tickCount <= 5) {
+            float damage = Math.min(100, entityData.get(MANA) / 100f);
+            for (LivingEntity e : level.getEntitiesOfClass(LivingEntity.class, getBoundingBox().inflate(4, 4, 4))) {
+                e.hurt(damageSources().magic(), damage);
+            }
+            PacketDistributor.NEAR.with(new PacketDistributor.TargetPoint(getX(), getY(), getZ(), 128, level.dimension())).send(new SpawnAMParticlesPacket(this));
+            setRemoved(RemovalReason.KILLED);
+        }
+    }
+
+    public int getDuration() {
+        return entityData.get(DURATION);
+    }
+}

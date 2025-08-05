@@ -1,0 +1,40 @@
+{
+  "affinities": {
+    "arsmagicalegacy:fire": 0.001
+  },
+  "manaCost": 25.0,
+  "reagents": [],
+  "recipe": [
+    {
+      "type": "arsmagicalegacy:ingredient",
+      "count": 1,
+      "ingredient": {
+        "item": "arsmagicalegacy:orange_rune"
+      }
+    },
+    {
+      "type": "arsmagicalegacy:ingredient",
+      "count": 1,
+      "ingredient": {
+        "item": "arsmagicalegacy:red_rune"
+      }
+    },
+    {
+      "type": "arsmagicalegacy:ingredient",
+      "count": 1,
+      "ingredient": {
+        "tag": "forge:dusts/vinteum"
+      }
+    },
+    {
+      "type": "arsmagicalegacy:ingredient",
+      "count": 1,
+      "ingredient": {
+        "type": "neoforge:nbt",
+        "item": "minecraft:flint_and_steel",
+        "strict": true,
+        "tag": "{Damage:0}"
+      }
+    }
+  ]
+}

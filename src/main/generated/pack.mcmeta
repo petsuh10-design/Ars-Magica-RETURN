@@ -1,0 +1,10 @@
+{
+  "pack": {
+    "description": "Ars Magica: Legacy",
+    "pack_format": 26,
+    "supported_formats": [
+      22,
+      26
+    ]
+  }
+}

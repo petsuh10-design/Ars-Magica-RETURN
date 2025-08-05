@@ -1,0 +1,37 @@
+{
+  "affinities": {},
+  "manaCost": 2.5,
+  "reagents": [],
+  "recipe": [
+    {
+      "type": "arsmagicalegacy:ingredient",
+      "count": 1,
+      "ingredient": {
+        "tag": "forge:gems/moonstone"
+      }
+    },
+    {
+      "type": "arsmagicalegacy:ingredient",
+      "count": 1,
+      "ingredient": {
+        "tag": "forge:gems/sunstone"
+      }
+    },
+    {
+      "type": "arsmagicalegacy:ingredient",
+      "count": 1,
+      "ingredient": {
+        "item": "arsmagicalegacy:tarma_root"
+      }
+    },
+    {
+      "type": "arsmagicalegacy:etherium",
+      "amount": 2500,
+      "types": [
+        "LIGHT",
+        "NEUTRAL",
+        "DARK"
+      ]
+    }
+  ]
+}

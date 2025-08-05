@@ -1,0 +1,44 @@
+{
+  "affinities": {
+    "arsmagicalegacy:life": 0.002
+  },
+  "manaCost": 80.0,
+  "reagents": [],
+  "recipe": [
+    {
+      "type": "arsmagicalegacy:ingredient",
+      "count": 1,
+      "ingredient": {
+        "item": "arsmagicalegacy:gray_rune"
+      }
+    },
+    {
+      "type": "arsmagicalegacy:ingredient",
+      "count": 1,
+      "ingredient": {
+        "tag": "forge:gems/chimerite"
+      }
+    },
+    {
+      "type": "arsmagicalegacy:ingredient",
+      "count": 1,
+      "ingredient": {
+        "tag": "forge:dusts/purified_vinteum"
+      }
+    },
+    {
+      "type": "arsmagicalegacy:ingredient",
+      "count": 1,
+      "ingredient": {
+        "item": "arsmagicalegacy:cerublossom"
+      }
+    },
+    {
+      "type": "arsmagicalegacy:etherium",
+      "amount": 2500,
+      "types": [
+        "DARK"
+      ]
+    }
+  ]
+}

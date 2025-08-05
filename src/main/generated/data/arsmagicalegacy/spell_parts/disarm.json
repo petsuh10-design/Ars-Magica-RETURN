@@ -1,0 +1,26 @@
+{
+  "affinities": {
+    "arsmagicalegacy:arcane": 0.002
+  },
+  "manaCost": 60.0,
+  "reagents": [],
+  "recipe": [
+    {
+      "type": "arsmagicalegacy:ingredient",
+      "count": 1,
+      "ingredient": {
+        "item": "arsmagicalegacy:purple_rune"
+      }
+    },
+    {
+      "type": "arsmagicalegacy:ingredient",
+      "count": 1,
+      "ingredient": {
+        "type": "neoforge:nbt",
+        "item": "minecraft:iron_sword",
+        "strict": true,
+        "tag": "{Damage:0}"
+      }
+    }
+  ]
+}

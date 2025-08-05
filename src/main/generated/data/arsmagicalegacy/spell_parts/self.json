@@ -1,0 +1,21 @@
+{
+  "affinities": {},
+  "manaCost": 0.5,
+  "reagents": [],
+  "recipe": [
+    {
+      "type": "arsmagicalegacy:ingredient",
+      "count": 1,
+      "ingredient": {
+        "tag": "forge:dusts/vinteum"
+      }
+    },
+    {
+      "type": "arsmagicalegacy:ingredient",
+      "count": 1,
+      "ingredient": {
+        "item": "arsmagicalegacy:aum"
+      }
+    }
+  ]
+}

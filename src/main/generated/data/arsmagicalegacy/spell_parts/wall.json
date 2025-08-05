@@ -1,0 +1,44 @@
+{
+  "affinities": {},
+  "manaCost": 2.5,
+  "reagents": [],
+  "recipe": [
+    {
+      "type": "arsmagicalegacy:ingredient",
+      "count": 1,
+      "ingredient": {
+        "tag": "forge:dusts/vinteum"
+      }
+    },
+    {
+      "type": "arsmagicalegacy:ingredient",
+      "count": 1,
+      "ingredient": {
+        "tag": "forge:fences/wooden"
+      }
+    },
+    {
+      "type": "arsmagicalegacy:ingredient",
+      "count": 1,
+      "ingredient": {
+        "item": "arsmagicalegacy:magic_wall"
+      }
+    },
+    {
+      "type": "arsmagicalegacy:ingredient",
+      "count": 1,
+      "ingredient": {
+        "tag": "minecraft:walls"
+      }
+    },
+    {
+      "type": "arsmagicalegacy:etherium",
+      "amount": 2500,
+      "types": [
+        "LIGHT",
+        "NEUTRAL",
+        "DARK"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+package com.arsmagica2.arsmagica2return.common.entity;
+
+import com.arsmagica2.arsmagica2return.api.ArsMagicaAPI;
+import com.arsmagica2.arsmagica2return.api.spell.PrefabSpell;
+import com.arsmagica2.arsmagica2return.common.entity.ai.ExecuteBossSpellGoal;
+import com.arsmagica2.arsmagica2return.common.entity.ai.LightningRodGoal;
+import com.arsmagica2.arsmagica2return.common.entity.ai.StaticGoal;
+import com.arsmagica2.arsmagica2return.common.init.AMAttributes;
+import com.arsmagica2.arsmagica2return.common.init.AMSounds;
+import net.minecraft.core.Registry;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.tags.DamageTypeTags;
+import net.minecraft.world.BossEvent;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.level.Level;
+import software.bernie.geckolib.core.animation.AnimatableManager;
+
+public class LightningGuardian extends AbstractBoss {
+    public LightningGuardian(EntityType<? extends LightningGuardian> type, Level level) {
+        super(type, level, BossEvent.BossBarColor.YELLOW);
+    }
+
+    public static AttributeSupplier.Builder createAttributes() {
+        return createMonsterAttributes().add(Attributes.MAX_HEALTH, 250).add(Attributes.ARMOR, 20).add(AMAttributes.MAX_MANA.value(), 4000).add(AMAttributes.MAX_BURNOUT.value(), 4000);
+    }
+
+    @Override
+    public SoundEvent getAmbientSound() {
+        return AMSounds.LIGHTNING_GUARDIAN_AMBIENT.value();
+    }
+
+    @Override
+    public SoundEvent getHurtSound(DamageSource pDamageSource) {
+        return AMSounds.LIGHTNING_GUARDIAN_HURT.value();
+    }
+
+    @Override
+    public SoundEvent getDeathSound() {
+        return AMSounds.LIGHTNING_GUARDIAN_DEATH.value();
+    }
+
+    @Override
+    public SoundEvent getAttackSound() {
+        return AMSounds.LIGHTNING_GUARDIAN_ATTACK.value();
+    }
+
+    @SuppressWarnings("DataFlowIssue")
+    @Override
+    protected void registerGoals() {
+        super.registerGoals();
+        goalSelector.addGoal(1, new LightningRodGoal(this));
+        goalSelector.addGoal(1, new StaticGoal(this));
+        Registry<PrefabSpell> prefabSpells = level().registryAccess().registryOrThrow(PrefabSpell.REGISTRY_KEY);
+        goalSelector.addGoal(1, new ExecuteBossSpellGoal<>(this, prefabSpells.get(new ResourceLocation(ArsMagicaAPI.MOD_ID, "lightning_bolt")).spell(), 10));
+        goalSelector.addGoal(1, new ExecuteBossSpellGoal<>(this, prefabSpells.get(new ResourceLocation(ArsMagicaAPI.MOD_ID, "strong_lightning_bolt")).spell(), 10));
+        goalSelector.addGoal(1, new ExecuteBossSpellGoal<>(this, prefabSpells.get(new ResourceLocation(ArsMagicaAPI.MOD_ID, "area_lightning")).spell(), 10));
+        goalSelector.addGoal(1, new ExecuteBossSpellGoal<>(this, prefabSpells.get(new ResourceLocation(ArsMagicaAPI.MOD_ID, "lightning_rune")).spell(), 10));
+        goalSelector.addGoal(1, new ExecuteBossSpellGoal<>(this, prefabSpells.get(new ResourceLocation(ArsMagicaAPI.MOD_ID, "scramble_synapses")).spell(), 10));
+    }
+
+    @Override
+    public void aiStep() {
+        if (level().isClientSide()) {
+            // Particles
+        }
+        super.aiStep();
+    }
+
+    @Override
+    public boolean hurt(DamageSource pSource, float pAmount) {
+        if (pSource.is(DamageTypeTags.IS_DROWNING)) {
+            pAmount *= 2;
+        } else if (pSource.is(DamageTypeTags.IS_LIGHTNING)) {
+            heal(pAmount);
+            return false;
+        }
+        return super.hurt(pSource, pAmount);
+    }
+
+    @Override
+    public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
+        controllers.add(
+                createActionAnimationController("lightning_guardian", "idle", Action.IDLE),
+                createActionAnimationController("lightning_guardian", "cast", Action.CAST),
+                createActionAnimationController("lightning_guardian", "cast", Action.LONG_CAST),
+                createActionAnimationController("lightning_guardian", "spin", Action.SPIN)
+        );
+    }
+
+    @Override
+    public void setAction(Action action) {
+        super.setAction(action);
+        setNoGravity(action == Action.LONG_CAST);
+    }
+}

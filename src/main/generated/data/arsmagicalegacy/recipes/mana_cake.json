@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "forge:crops/wheat"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "arsmagicalegacy:aum"
+    },
+    {
+      "item": "arsmagicalegacy:cerublossom"
+    }
+  ],
+  "result": {
+    "count": 3,
+    "item": "arsmagicalegacy:mana_cake"
+  }
+}

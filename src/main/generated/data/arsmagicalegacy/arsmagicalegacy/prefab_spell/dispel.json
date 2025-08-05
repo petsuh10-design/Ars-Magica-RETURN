@@ -1,0 +1,17 @@
+{
+  "icon": "arsmagicalegacy:shield_royal_3",
+  "name": {
+    "translate": "prefab_spell.arsmagicalegacy.dispel.name"
+  },
+  "spell": {
+    "data": {},
+    "shape_groups": [
+      [
+        "arsmagicalegacy:self"
+      ]
+    ],
+    "spell_stack": [
+      "arsmagicalegacy:dispel"
+    ]
+  }
+}

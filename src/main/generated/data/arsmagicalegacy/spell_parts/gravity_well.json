@@ -1,0 +1,23 @@
+{
+  "affinities": {
+    "arsmagicalegacy:earth": 0.001
+  },
+  "manaCost": 40.0,
+  "reagents": [],
+  "recipe": [
+    {
+      "type": "arsmagicalegacy:ingredient",
+      "count": 1,
+      "ingredient": {
+        "item": "arsmagicalegacy:gray_rune"
+      }
+    },
+    {
+      "type": "arsmagicalegacy:ingredient",
+      "count": 1,
+      "ingredient": {
+        "tag": "forge:stone"
+      }
+    }
+  ]
+}

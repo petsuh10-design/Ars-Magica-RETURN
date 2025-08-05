@@ -1,0 +1,26 @@
+{
+  "effect": {
+    "type": "arsmagicalegacy:spawn_entity",
+    "entity_type": "arsmagicalegacy:earth_guardian"
+  },
+  "requirements": [
+    {
+      "type": "arsmagicalegacy:structure",
+      "structure": "arsmagicalegacy:earth_guardian_spawn_ritual"
+    }
+  ],
+  "trigger": {
+    "type": "arsmagicalegacy:item_drop",
+    "ingredients": [
+      {
+        "tag": "forge:gems/emerald"
+      },
+      {
+        "tag": "forge:gems/chimerite"
+      },
+      {
+        "tag": "forge:gems/topaz"
+      }
+    ]
+  }
+}

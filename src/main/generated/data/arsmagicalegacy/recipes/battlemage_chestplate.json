@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "E": {
+      "type": "neoforge:nbt",
+      "item": "arsmagicalegacy:affinity_essence",
+      "tag": "{\"arsmagicalegacy:affinity\":\"arsmagicalegacy:earth\"}"
+    },
+    "G": {
+      "tag": "forge:ingots/gold"
+    },
+    "O": {
+      "item": "minecraft:obsidian"
+    },
+    "R": {
+      "item": "arsmagicalegacy:red_rune"
+    }
+  },
+  "pattern": [
+    "GEG",
+    "ORO",
+    "OOO"
+  ],
+  "result": {
+    "item": "arsmagicalegacy:battlemage_chestplate"
+  }
+}

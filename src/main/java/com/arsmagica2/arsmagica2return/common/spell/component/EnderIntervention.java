@@ -1,0 +1,48 @@
+package com.arsmagica2.arsmagica2return.common.spell.component;
+
+import com.arsmagica2.arsmagica2return.api.spell.ISpell;
+import com.arsmagica2.arsmagica2return.api.spell.ISpellModifier;
+import com.arsmagica2.arsmagica2return.api.spell.SpellCastResult;
+import com.arsmagica2.arsmagica2return.common.init.AMMobEffects;
+import com.arsmagica2.arsmagica2return.common.util.TranslationConstants;
+import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.EntityHitResult;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
+
+public class EnderIntervention extends AbstractComponent {
+    @Override
+    public SpellCastResult invoke(ISpell spell, LivingEntity caster, @Nullable Entity directEntity, Level level, List<ISpellModifier> modifiers, EntityHitResult target, int index, int ticksUsed) {
+        if (caster.hasEffect(AMMobEffects.ASTRAL_DISTORTION.value())) return SpellCastResult.EFFECT_FAILED;
+        if (target.getEntity() instanceof LivingEntity living && !living.hasEffect(AMMobEffects.ASTRAL_DISTORTION.value())) {
+            if (living.hasEffect(AMMobEffects.ASTRAL_DISTORTION.value())) {
+                if (living instanceof Player) {
+                    living.sendSystemMessage(Component.translatable(TranslationConstants.NO_TELEPORT));
+                }
+            } else if (level.dimension() == Level.NETHER) {
+                if (living instanceof Player) {
+                    living.sendSystemMessage(Component.translatable(TranslationConstants.NO_TELEPORT_NETHER));
+                }
+            } else if (level.dimension() != Level.END && level instanceof ServerLevel server) {
+                ServerLevel serverlevel = server.getServer().getLevel(Level.END);
+                if (serverlevel != null) {
+                    living.changeDimension(serverlevel);
+                    return SpellCastResult.SUCCESS;
+                }
+            }
+        }
+        return SpellCastResult.EFFECT_FAILED;
+    }
+
+    @Override
+    public SpellCastResult invoke(ISpell spell, LivingEntity caster, @Nullable Entity directEntity, Level level, List<ISpellModifier> modifiers, BlockHitResult target, int index, int ticksUsed) {
+        return SpellCastResult.EFFECT_FAILED;
+    }
+}

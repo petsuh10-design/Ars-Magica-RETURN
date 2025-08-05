@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "forge:rods/wooden"
+    },
+    {
+      "tag": "forge:crops/potato"
+    },
+    {
+      "item": "minecraft:ice"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "type": "neoforge:nbt",
+      "item": "minecraft:potion",
+      "tag": "{Potion:\"minecraft:water\"}"
+    }
+  ],
+  "result": {
+    "item": "arsmagicalegacy:mana_martini"
+  }
+}

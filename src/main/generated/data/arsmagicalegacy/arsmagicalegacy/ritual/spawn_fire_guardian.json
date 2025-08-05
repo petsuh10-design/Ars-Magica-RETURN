@@ -1,0 +1,26 @@
+{
+  "effect": {
+    "type": "arsmagicalegacy:spawn_entity",
+    "entity_type": "arsmagicalegacy:fire_guardian"
+  },
+  "requirements": [
+    {
+      "type": "arsmagicalegacy:structure",
+      "structure": "arsmagicalegacy:fire_guardian_spawn_ritual"
+    },
+    {
+      "type": "arsmagicalegacy:ultrawarm_dimension"
+    }
+  ],
+  "trigger": {
+    "type": "arsmagicalegacy:item_drop",
+    "ingredients": [
+      {
+        "type": "neoforge:nbt",
+        "item": "arsmagicalegacy:affinity_essence",
+        "strict": true,
+        "tag": "{\"arsmagicalegacy:affinity\":\"arsmagicalegacy:water\"}"
+      }
+    ]
+  }
+}

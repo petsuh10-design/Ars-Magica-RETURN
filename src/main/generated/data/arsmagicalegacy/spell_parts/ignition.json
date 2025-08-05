@@ -1,0 +1,26 @@
+{
+  "affinities": {
+    "arsmagicalegacy:fire": 0.002
+  },
+  "manaCost": 80.0,
+  "reagents": [],
+  "recipe": [
+    {
+      "type": "arsmagicalegacy:ingredient",
+      "count": 1,
+      "ingredient": {
+        "item": "arsmagicalegacy:orange_rune"
+      }
+    },
+    {
+      "type": "arsmagicalegacy:ingredient",
+      "count": 1,
+      "ingredient": {
+        "type": "neoforge:nbt",
+        "item": "minecraft:flint_and_steel",
+        "strict": true,
+        "tag": "{Damage:0}"
+      }
+    }
+  ]
+}

@@ -1,96 +1,80 @@
 package com.arsmagica2.arsmagica2return;
 
-import com.arsmagica2.arsmagica2return.common.blocks.AMBlocks;
-import com.arsmagica2.arsmagica2return.common.items.AMItems;
-import com.arsmagica2.arsmagica2return.common.magic.AMSpells;
-import com.arsmagica2.arsmagica2return.common.network.AMNetworking;
-import com.arsmagica2.arsmagica2return.common.registries.AMRegistries;
-import com.arsmagica2.arsmagica2return.common.capabilities.AMCapabilities;
-import com.arsmagica2.arsmagica2return.common.config.AMConfig;
-import com.arsmagica2.arsmagica2return.common.worldgen.AMWorldGen;
-import com.arsmagica2.arsmagica2return.client.ClientSetup;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.server.ServerStartingEvent;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.DistExecutor;
-import net.minecraftforge.fml.ModLoadingContext;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.config.ModConfig;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import com.arsmagica2.arsmagica2return.api.ArsMagicaAPI;
+import com.arsmagica2.arsmagica2return.client.ClientInit;
+import com.arsmagica2.arsmagica2return.common.affinity.AffinityHelper;
+import com.arsmagica2.arsmagica2return.common.etherium.EtheriumHelper;
+import com.arsmagica2.arsmagica2return.common.handler.EventHandler;
+import com.arsmagica2.arsmagica2return.common.init.AMRegistries;
+import com.arsmagica2.arsmagica2return.common.magic.BurnoutHelper;
+import com.arsmagica2.arsmagica2return.common.magic.ContingencyHelper;
+import com.arsmagica2.arsmagica2return.common.magic.MagicHelper;
+import com.arsmagica2.arsmagica2return.common.magic.ManaHelper;
+import com.arsmagica2.arsmagica2return.common.magic.RiftHelper;
+import com.arsmagica2.arsmagica2return.common.skill.SkillHelper;
+import com.arsmagica2.arsmagica2return.common.spell.SpellDataManager;
+import com.arsmagica2.arsmagica2return.compat.CompatManager;
+import com.arsmagica2.arsmagica2return.network.NetworkInit;
+import com.arsmagica2.arsmagica2return.server.ServerInit;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.loading.FMLEnvironment;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import software.bernie.geckolib.GeckoLib;
 
-@Mod(ArsMagica2Return.MOD_ID)
-public class ArsMagica2Return {
-    public static final String MOD_ID = "arsmagica2return";
-    public static final String MOD_NAME = "Ars Magica 2 Return";
-    
-    private static final Logger LOGGER = LogManager.getLogger();
-    
-    public ArsMagica2Return() {
-        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+@Mod(ArsMagicaAPI.MOD_ID)
+public final class ArsMagica2Return {
+    public static final Logger LOGGER = LoggerFactory.getLogger(ArsMagicaAPI.MOD_ID);
+    private static ArsMagica2Return INSTANCE;
+
+    private final ModContainer modContainer;
+
+    public ArsMagica2Return(ModContainer container, IEventBus bus) {
+        if (INSTANCE != null) {
+            IllegalStateException exception = new IllegalStateException("Tried to create mod " + ArsMagicaAPI.MOD_ID + " more than once!");
+            LOGGER.error(exception.getMessage(), exception);
+            throw exception;
+        }
+        if (!(ArsMagicaAPI.get() instanceof ArsMagicaAPIImpl)) {
+            IllegalStateException exception = new IllegalStateException("API was not initialized!");
+            LOGGER.error(exception.getMessage(), exception);
+            throw exception;
+        }
+        INSTANCE = this;
+        modContainer = container;
+        GeckoLib.initialize(bus);
+        AMRegistries.init(bus);
+        EventHandler.register(bus);
+        CompatManager.register(bus);
+        NetworkInit.init(bus);
         
-        // Реєстрація основних компонентів
-        AMRegistries.init(modEventBus);
-        AMBlocks.BLOCKS.register(modEventBus);
-        AMItems.ITEMS.register(modEventBus);
-        AMSpells.init(modEventBus);
-        AMCapabilities.register(modEventBus);
+        ServerInit.init(bus);
+        if (FMLEnvironment.dist == Dist.CLIENT) {
+            ClientInit.init(bus);
+        }
         
-        // Конфігурація
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, AMConfig.COMMON_SPEC);
-        ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, AMConfig.CLIENT_SPEC);
-        
-        // Події
-        modEventBus.addListener(this::setup);
-        modEventBus.addListener(this::clientSetup);
-        
-        // Клієнтська частина
-        DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> {
-            modEventBus.addListener(ClientSetup::init);
-        });
-        
-        MinecraftForge.EVENT_BUS.register(this);
-        
-        LOGGER.info("Ars Magica 2 Return завантажується...");
+        // Ініціалізація магічних систем
+        ManaHelper.init();
+        BurnoutHelper.init();
+        AffinityHelper.init();
+        SkillHelper.init();
+        ContingencyHelper.init();
+        RiftHelper.init();
+        MagicHelper.init();
+        EtheriumHelper.init();
+        SpellDataManager.init();
+
+        LOGGER.info("Ars Magica 2 Return successfully loaded!");
     }
-    
-    private void setup(final FMLCommonSetupEvent event) {
-        LOGGER.info("Ініціалізація Ars Magica 2 Return...");
-        
-        event.enqueueWork(() -> {
-            // Мережа
-            AMNetworking.register();
-            
-            // Генерація світу
-            AMWorldGen.register();
-            
-            // Можливості
-            AMCapabilities.setup();
-        });
-        
-        LOGGER.info("Ars Magica 2 Return успішно ініціалізовано!");
+
+    public static ArsMagica2Return getInstance() {
+        return INSTANCE;
     }
-    
-    private void clientSetup(final FMLClientSetupEvent event) {
-        LOGGER.info("Клієнтська ініціалізація Ars Magica 2 Return...");
-    }
-    
-    @SubscribeEvent
-    public void onServerStarting(ServerStartingEvent event) {
-        LOGGER.info("Ars Magica 2 Return запускається на сервері...");
-    }
-    
-    public static ResourceLocation rl(String path) {
-        return new ResourceLocation(MOD_ID, path);
-    }
-    
-    public static Logger getLogger() {
-        return LOGGER;
+
+    public ModContainer getModContainer() {
+        return modContainer;
     }
 }
