@@ -1,0 +1,32 @@
+package com.arsmagica2.arsmagica2return.common.ritual.effect;
+
+import com.arsmagica2.arsmagica2return.api.ArsMagicaAPI;
+import com.arsmagica2.arsmagica2return.api.ritual.RitualEffect;
+import com.arsmagica2.arsmagica2return.api.spell.ISpellPart;
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.minecraft.core.BlockPos;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.entity.player.Player;
+
+public record LearnSkillRitualEffect(ResourceLocation id) implements RitualEffect {
+    public static final Codec<LearnSkillRitualEffect> CODEC = RecordCodecBuilder.create(inst -> inst.group(
+            ResourceLocation.CODEC.fieldOf("skill").forGetter(LearnSkillRitualEffect::id)
+    ).apply(inst, LearnSkillRitualEffect::new));
+
+    public LearnSkillRitualEffect(ISpellPart part) {
+        this(part.getId());
+    }
+
+    @Override
+    public boolean performEffect(Player player, ServerLevel level, BlockPos pos) {
+        ArsMagicaAPI.get().getSkillHelper().learn(player, id);
+        return true;
+    }
+
+    @Override
+    public Codec<? extends RitualEffect> codec() {
+        return CODEC;
+    }
+}

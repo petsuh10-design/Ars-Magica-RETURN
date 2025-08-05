@@ -1,0 +1,30 @@
+{
+  "affinities": {
+    "arsmagicalegacy:air": 0.001
+  },
+  "manaCost": 50.0,
+  "reagents": [],
+  "recipe": [
+    {
+      "type": "arsmagicalegacy:ingredient",
+      "count": 1,
+      "ingredient": {
+        "item": "arsmagicalegacy:white_rune"
+      }
+    },
+    {
+      "type": "arsmagicalegacy:ingredient",
+      "count": 1,
+      "ingredient": {
+        "tag": "forge:nether_stars"
+      }
+    },
+    {
+      "type": "arsmagicalegacy:ingredient",
+      "count": 1,
+      "ingredient": {
+        "item": "minecraft:ghast_tear"
+      }
+    }
+  ]
+}

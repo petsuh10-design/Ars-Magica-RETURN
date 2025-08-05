@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "tag": "minecraft:coals"
+    },
+    "G": {
+      "tag": "forge:glass"
+    },
+    "S": {
+      "item": "minecraft:stone_bricks"
+    },
+    "T": {
+      "tag": "forge:gems/topaz"
+    }
+  },
+  "pattern": [
+    "SGS",
+    " S ",
+    "CTC"
+  ],
+  "result": {
+    "item": "arsmagicalegacy:occulus"
+  }
+}

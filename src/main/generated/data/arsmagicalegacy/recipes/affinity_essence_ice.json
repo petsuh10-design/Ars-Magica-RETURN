@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "arsmagicalegacy:arcane_ash"
+    },
+    "E": {
+      "type": "neoforge:nbt",
+      "item": "arsmagicalegacy:affinity_essence",
+      "tag": "{\"arsmagicalegacy:affinity\":\"arsmagicalegacy:ice\"}"
+    },
+    "I": {
+      "item": "minecraft:snow_block"
+    },
+    "J": {
+      "item": "minecraft:ice"
+    }
+  },
+  "pattern": [
+    "AIA",
+    "JEJ",
+    "AIA"
+  ],
+  "result": {
+    "count": 2,
+    "item": "arsmagicalegacy:affinity_essence",
+    "nbt": "{\"arsmagicalegacy:affinity\":\"arsmagicalegacy:ice\"}"
+  }
+}

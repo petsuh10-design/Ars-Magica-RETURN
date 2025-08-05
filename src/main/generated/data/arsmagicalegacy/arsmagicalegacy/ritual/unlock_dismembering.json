@@ -1,0 +1,18 @@
+{
+  "effect": {
+    "type": "arsmagicalegacy:learn_skill",
+    "skill": "arsmagicalegacy:dismembering"
+  },
+  "requirements": [],
+  "trigger": {
+    "type": "arsmagicalegacy:spell_component_cast",
+    "components": [
+      "arsmagicalegacy:physical_damage"
+    ],
+    "modifiers": [
+      "arsmagicalegacy:damage",
+      "arsmagicalegacy:healing",
+      "arsmagicalegacy:piercing"
+    ]
+  }
+}

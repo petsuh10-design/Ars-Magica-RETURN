@@ -1,0 +1,33 @@
+{
+  "affinities": {
+    "arsmagicalegacy:life": 0.001
+  },
+  "manaCost": 50.0,
+  "reagents": [],
+  "recipe": [
+    {
+      "type": "arsmagicalegacy:ingredient",
+      "count": 1,
+      "ingredient": {
+        "item": "arsmagicalegacy:yellow_rune"
+      }
+    },
+    {
+      "type": "arsmagicalegacy:ingredient",
+      "count": 1,
+      "ingredient": {
+        "item": "minecraft:golden_apple"
+      }
+    },
+    {
+      "type": "arsmagicalegacy:ingredient",
+      "count": 1,
+      "ingredient": {
+        "type": "neoforge:nbt",
+        "item": "minecraft:shield",
+        "strict": true,
+        "tag": "{Damage:0}"
+      }
+    }
+  ]
+}

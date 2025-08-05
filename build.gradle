@@ -1,0 +1,146 @@
+buildscript {
+    repositories {
+        maven { url = 'https://maven.minecraftforge.net' }
+        maven { url = 'https://maven.parchmentmc.org' }
+        mavenCentral()
+    }
+    dependencies {
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '6.0.+', changing: true
+        // classpath 'org.parchmentmc:librarian-forge:1.+'
+    }
+}
+
+plugins {
+    id 'eclipse'
+    id 'maven-publish'
+    id 'net.minecraftforge.gradle' version '6.0.+'
+    // id 'org.parchmentmc.librarian.forgegradle' version '1.+'
+}
+
+version = project.findProperty('mod.version') ?: '1.0.0'
+group = project.findProperty('mod.group') ?: 'com.arsmagica2.arsmagica2return'
+archivesBaseName = project.findProperty('mod.id') ?: 'arsmagica2return'
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+
+println "Java: ${System.getProperty 'java.version'}, JVM: ${System.getProperty 'java.vm.version'} (${System.getProperty 'java.vendor'}), Arch: ${System.getProperty 'os.arch'}"
+
+minecraft {
+    mappings channel: 'official', version: project.findProperty('mc_version') ?: '1.20.1'
+    
+    runs {
+        client {
+            workingDirectory project.file('run')
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+            property 'forge.enabledGameTestNamespaces', project.findProperty('mod.id') ?: 'arsmagica2return'
+            mods {
+                arsmagica2return {
+                    source sourceSets.main
+                }
+            }
+        }
+
+        server {
+            workingDirectory project.file('run')
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+            property 'forge.enabledGameTestNamespaces', project.findProperty('mod.id') ?: 'arsmagica2return'
+            mods {
+                arsmagica2return {
+                    source sourceSets.main
+                }
+            }
+        }
+
+        gameTestServer {
+            workingDirectory project.file('run')
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+            property 'forge.enabledGameTestNamespaces', project.findProperty('mod.id') ?: 'arsmagica2return'
+            mods {
+                arsmagica2return {
+                    source sourceSets.main
+                }
+            }
+        }
+
+        data {
+            workingDirectory project.file('run')
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+            args '--mod', project.findProperty('mod.id') ?: 'arsmagica2return', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+            mods {
+                arsmagica2return {
+                    source sourceSets.main
+                }
+            }
+        }
+    }
+}
+
+sourceSets.main.resources { srcDir 'src/generated/resources' }
+
+// parchment {
+//     definitelyDoNotUseThisForProduction = true
+//     minecraftVersion = project.findProperty('parchment.minecraftVersion') ?: '1.20.1'
+//     mappingsVersion = project.findProperty('parchment.mappingsVersion') ?: '2023.06.26'
+// }
+
+repositories {
+    mavenCentral()
+    maven {
+        name = 'MinecraftForge'
+        url = 'https://maven.minecraftforge.net/'
+    }
+    maven {
+        name = 'JEI maven'
+        url = 'https://dvs1.progwml6.com/files/maven/'
+    }
+    maven {
+        name = 'Curios maven'
+        url = 'https://maven.theillusivec4.top/'
+    }
+    maven {
+        name = 'Patchouli maven'
+        url = 'https://maven.blamejared.com'
+    }
+    maven {
+        name = 'GeckoLib maven'
+        url = 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
+    }
+}
+
+dependencies {
+    minecraft "net.minecraftforge:forge:${project.findProperty('mc_version') ?: '1.20.1'}-${project.findProperty('forge_version') ?: '47.2.0'}"
+    
+    // Компіляція без додаткових залежностей для початку
+}
+
+jar {
+    manifest {
+        attributes([
+                "Specification-Title"     : project.findProperty('mod.name') ?: "Ars Magica 2 Return",
+                "Specification-Vendor"    : project.findProperty('mod.vendor') ?: "ArsMagica2Return Team",
+                "Specification-Version"   : "1",
+                "Implementation-Title"    : project.name,
+                "Implementation-Version"  : project.jar.archiveVersion,
+                "Implementation-Vendor"   : project.findProperty('mod.vendor') ?: "ArsMagica2Return Team",
+                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+        ])
+    }
+}
+
+jar.finalizedBy('reobfJar')
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            artifact jar
+        }
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}

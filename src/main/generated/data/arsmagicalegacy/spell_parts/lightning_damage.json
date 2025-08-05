@@ -1,0 +1,37 @@
+{
+  "affinities": {
+    "arsmagicalegacy:lightning": 0.001
+  },
+  "manaCost": 25.0,
+  "reagents": [],
+  "recipe": [
+    {
+      "type": "arsmagicalegacy:ingredient",
+      "count": 1,
+      "ingredient": {
+        "item": "arsmagicalegacy:white_rune"
+      }
+    },
+    {
+      "type": "arsmagicalegacy:ingredient",
+      "count": 1,
+      "ingredient": {
+        "item": "arsmagicalegacy:yellow_rune"
+      }
+    },
+    {
+      "type": "arsmagicalegacy:ingredient",
+      "count": 1,
+      "ingredient": {
+        "tag": "forge:gems/chimerite"
+      }
+    },
+    {
+      "type": "arsmagicalegacy:ingredient",
+      "count": 1,
+      "ingredient": {
+        "item": "minecraft:lightning_rod"
+      }
+    }
+  ]
+}

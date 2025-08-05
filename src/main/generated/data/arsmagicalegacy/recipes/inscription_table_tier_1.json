@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "arsmagicalegacy:inscription_table"
+    },
+    {
+      "item": "arsmagicalegacy:inscription_table_upgrade_tier_1"
+    }
+  ],
+  "result": {
+    "item": "arsmagicalegacy:inscription_table",
+    "nbt": "{BlockStateTag:{tier:\"1\"}}"
+  }
+}

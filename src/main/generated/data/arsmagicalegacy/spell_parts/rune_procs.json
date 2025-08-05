@@ -1,0 +1,45 @@
+{
+  "affinities": {},
+  "manaCost": 1.25,
+  "reagents": [],
+  "recipe": [
+    {
+      "type": "arsmagicalegacy:ingredient",
+      "count": 1,
+      "ingredient": {
+        "type": "neoforge:nbt",
+        "item": "arsmagicalegacy:affinity_essence",
+        "strict": true,
+        "tag": "{\"arsmagicalegacy:affinity\":\"arsmagicalegacy:arcane\"}"
+      }
+    },
+    {
+      "type": "arsmagicalegacy:ingredient",
+      "count": 1,
+      "ingredient": {
+        "item": "arsmagicalegacy:black_rune"
+      }
+    },
+    {
+      "type": "arsmagicalegacy:ingredient",
+      "count": 1,
+      "ingredient": {
+        "item": "arsmagicalegacy:magenta_rune"
+      }
+    },
+    {
+      "type": "arsmagicalegacy:ingredient",
+      "count": 1,
+      "ingredient": {
+        "item": "arsmagicalegacy:pink_rune"
+      }
+    },
+    {
+      "type": "arsmagicalegacy:ingredient",
+      "count": 1,
+      "ingredient": {
+        "item": "arsmagicalegacy:white_rune"
+      }
+    }
+  ]
+}

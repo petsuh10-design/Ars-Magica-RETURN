@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "tag": "forge:cobblestone"
+    }
+  },
+  "pattern": [
+    " # ",
+    "###",
+    "## "
+  ],
+  "result": {
+    "count": 2,
+    "item": "arsmagicalegacy:blank_rune"
+  }
+}

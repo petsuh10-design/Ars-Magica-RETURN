@@ -1,0 +1,24 @@
+{
+  "affinities": {},
+  "manaCost": 1.25,
+  "reagents": [],
+  "recipe": [
+    {
+      "type": "arsmagicalegacy:ingredient",
+      "count": 1,
+      "ingredient": {
+        "type": "neoforge:nbt",
+        "item": "arsmagicalegacy:affinity_essence",
+        "strict": true,
+        "tag": "{\"arsmagicalegacy:affinity\":\"arsmagicalegacy:air\"}"
+      }
+    },
+    {
+      "type": "arsmagicalegacy:ingredient",
+      "count": 1,
+      "ingredient": {
+        "tag": "forge:slimeballs"
+      }
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+package com.arsmagica2.arsmagica2return.data;
+
+import com.arsmagica2.arsmagica2return.api.ArsMagicaAPI;
+import com.arsmagica2.arsmagica2return.api.data.OcculusTabProvider;
+import com.arsmagica2.arsmagica2return.client.gui.occulus.OcculusAffinityTabRenderer;
+
+class AMOcculusTabProvider extends OcculusTabProvider {
+    AMOcculusTabProvider() {
+        super(ArsMagicaAPI.MOD_ID);
+    }
+
+    @Override
+    public void generate() {
+        add("offense", builder(0).setStartX(226).setStartY(46).build());
+        add("defense", builder(1).setStartX(181).setStartY(46).build());
+        add("utility", builder(2).setStartX(136).setStartY(46).build());
+        add("talent", builder(3).setStartX(91).setStartY(46).build());
+        add("affinity", builder(4).setRenderer(OcculusAffinityTabRenderer.class).build());
+    }
+}

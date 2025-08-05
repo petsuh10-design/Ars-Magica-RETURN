@@ -1,0 +1,114 @@
+package com.arsmagica2.arsmagica2return.common.entity;
+
+import com.arsmagica2.arsmagica2return.api.ArsMagicaAPI;
+import com.arsmagica2.arsmagica2return.network.SpawnAMParticlesPacket;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.level.Level;
+import net.minecraftforge.neoforge.network.PacketDistributor;
+import org.jetbrains.annotations.Nullable;
+
+public class FireRain extends AbstractSpellEntity {
+    private static final EntityDataAccessor<Integer> COLOR = SynchedEntityData.defineId(FireRain.class, EntityDataSerializers.INT);
+    private static final EntityDataAccessor<Integer> DURATION = SynchedEntityData.defineId(FireRain.class, EntityDataSerializers.INT);
+    private static final EntityDataAccessor<Integer> OWNER = SynchedEntityData.defineId(FireRain.class, EntityDataSerializers.INT);
+    private static final EntityDataAccessor<Float> DAMAGE = SynchedEntityData.defineId(FireRain.class, EntityDataSerializers.FLOAT);
+    private static final EntityDataAccessor<Float> RADIUS = SynchedEntityData.defineId(FireRain.class, EntityDataSerializers.FLOAT);
+
+    public FireRain(EntityType<? extends FireRain> type, Level level) {
+        super(type, level);
+    }
+
+    @Override
+    protected void defineSynchedData() {
+        entityData.define(COLOR, -1);
+        entityData.define(DURATION, 200);
+        entityData.define(OWNER, 0);
+        entityData.define(DAMAGE, 0f);
+        entityData.define(RADIUS, 1f);
+    }
+
+    @Override
+    protected void readAdditionalSaveData(CompoundTag pCompound) {
+        CompoundTag tag = pCompound.getCompound(ArsMagicaAPI.MOD_ID);
+        entityData.set(COLOR, tag.getInt("Color"));
+        entityData.set(DURATION, tag.getInt("Duration"));
+        entityData.set(OWNER, tag.getInt("Owner"));
+        entityData.set(DAMAGE, tag.getFloat("Damage"));
+        entityData.set(RADIUS, tag.getFloat("Radius"));
+    }
+
+    @Override
+    protected void addAdditionalSaveData(CompoundTag pCompound) {
+        CompoundTag tag = pCompound.getCompound(ArsMagicaAPI.MOD_ID);
+        tag.putInt("Color", entityData.get(COLOR));
+        tag.putInt("Duration", entityData.get(DURATION));
+        tag.putInt("Owner", entityData.get(OWNER));
+        tag.putFloat("Damage", entityData.get(DAMAGE));
+        tag.putFloat("Radius", entityData.get(RADIUS));
+    }
+
+    @Override
+    public void tick() {
+        super.tick();
+        if (level().isClientSide() || tickCount % 5 != 0) return;
+        forAllInRange(getRadius(), true,  e -> {
+            e.hurt(damageSources().inFire(), getDamage());
+            e.setRemainingFireTicks(50);
+        });
+        if (tickCount > 0) {
+            PacketDistributor.NEAR.with(new PacketDistributor.TargetPoint(getX(), getY(), getZ(), 128, level().dimension())).send(new SpawnAMParticlesPacket(this));
+        }
+    }
+
+    @Override
+    public int getDuration() {
+        return entityData.get(DURATION);
+    }
+
+    public void setDuration(int duration) {
+        entityData.set(DURATION, duration);
+    }
+
+    @Override
+    @Nullable
+    public LivingEntity getOwner() {
+        Entity entity = level().getEntity(entityData.get(OWNER));
+        return entity instanceof LivingEntity living ? living : null;
+    }
+
+    @Override
+    public void setOwner(LivingEntity owner) {
+        entityData.set(OWNER, owner.getId());
+    }
+
+    public float getDamage() {
+        return entityData.get(DAMAGE);
+    }
+
+    public void setDamage(float damage) {
+        entityData.set(DAMAGE, damage);
+    }
+
+    public float getRadius() {
+        return entityData.get(RADIUS);
+    }
+
+    public void setRadius(float radius) {
+        entityData.set(RADIUS, radius);
+    }
+
+    @Override
+    public int getColor() {
+        return entityData.get(COLOR);
+    }
+
+    public void setColor(int color) {
+        entityData.set(COLOR, color);
+    }
+}

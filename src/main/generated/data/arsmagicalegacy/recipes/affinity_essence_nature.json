@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "arsmagicalegacy:arcane_ash"
+    },
+    "E": {
+      "type": "neoforge:nbt",
+      "item": "arsmagicalegacy:affinity_essence",
+      "tag": "{\"arsmagicalegacy:affinity\":\"arsmagicalegacy:nature\"}"
+    },
+    "I": {
+      "tag": "minecraft:leaves"
+    },
+    "J": {
+      "item": "minecraft:lily_pad"
+    },
+    "K": {
+      "item": "minecraft:cactus"
+    },
+    "L": {
+      "item": "minecraft:vine"
+    }
+  },
+  "pattern": [
+    "AIA",
+    "JEK",
+    "ALA"
+  ],
+  "result": {
+    "count": 2,
+    "item": "arsmagicalegacy:affinity_essence",
+    "nbt": "{\"arsmagicalegacy:affinity\":\"arsmagicalegacy:nature\"}"
+  }
+}

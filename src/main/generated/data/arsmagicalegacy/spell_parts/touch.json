@@ -1,0 +1,28 @@
+{
+  "affinities": {},
+  "manaCost": 1.0,
+  "reagents": [],
+  "recipe": [
+    {
+      "type": "arsmagicalegacy:ingredient",
+      "count": 1,
+      "ingredient": {
+        "tag": "forge:dusts/vinteum"
+      }
+    },
+    {
+      "type": "arsmagicalegacy:ingredient",
+      "count": 1,
+      "ingredient": {
+        "tag": "forge:feathers"
+      }
+    },
+    {
+      "type": "arsmagicalegacy:ingredient",
+      "count": 1,
+      "ingredient": {
+        "item": "minecraft:clay_ball"
+      }
+    }
+  ]
+}

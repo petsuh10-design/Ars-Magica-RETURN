@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "E": {
+      "type": "neoforge:nbt",
+      "item": "arsmagicalegacy:affinity_essence",
+      "tag": "{\"arsmagicalegacy:affinity\":\"arsmagicalegacy:water\"}"
+    },
+    "G": {
+      "tag": "forge:ingots/gold"
+    },
+    "O": {
+      "item": "minecraft:obsidian"
+    },
+    "R": {
+      "item": "arsmagicalegacy:red_rune"
+    }
+  },
+  "pattern": [
+    "OEO",
+    "GRG"
+  ],
+  "result": {
+    "item": "arsmagicalegacy:battlemage_boots"
+  }
+}

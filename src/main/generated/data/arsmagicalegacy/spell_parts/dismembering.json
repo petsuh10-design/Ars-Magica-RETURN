@@ -1,0 +1,31 @@
+{
+  "affinities": {},
+  "manaCost": 1.25,
+  "reagents": [],
+  "recipe": [
+    {
+      "type": "arsmagicalegacy:ingredient",
+      "count": 1,
+      "ingredient": {
+        "type": "neoforge:nbt",
+        "item": "arsmagicalegacy:affinity_essence",
+        "strict": true,
+        "tag": "{\"arsmagicalegacy:affinity\":\"arsmagicalegacy:ice\"}"
+      }
+    },
+    {
+      "type": "arsmagicalegacy:ingredient",
+      "count": 1,
+      "ingredient": {
+        "tag": "forge:bones"
+      }
+    },
+    {
+      "type": "arsmagicalegacy:ingredient",
+      "count": 1,
+      "ingredient": {
+        "item": "minecraft:wither_skeleton_skull"
+      }
+    }
+  ]
+}

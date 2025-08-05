@@ -1,0 +1,24 @@
+package com.arsmagica2.arsmagica2return.api.ritual;
+
+import com.arsmagica2.arsmagica2return.api.ArsMagicaAPI;
+import com.mojang.serialization.Codec;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Registry;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.ExtraCodecs;
+import net.minecraft.world.entity.player.Player;
+
+import java.util.function.Function;
+
+public interface RitualTrigger {
+    ResourceKey<Registry<Codec<? extends RitualTrigger>>> REGISTRY_KEY = ResourceKey.createRegistryKey(new ResourceLocation(ArsMagicaAPI.MOD_ID, "ritual_trigger_type"));
+    Codec<RitualTrigger> CODEC = ExtraCodecs.lazyInitializedCodec(() -> ArsMagicaAPI.get().getRitualTriggerTypeRegistry().byNameCodec()).dispatch(RitualTrigger::codec, Function.identity());
+
+    void register(Ritual ritual);
+
+    boolean trigger(Player player, ServerLevel level, BlockPos pos, Context ctx);
+
+    Codec<? extends RitualTrigger> codec();
+}

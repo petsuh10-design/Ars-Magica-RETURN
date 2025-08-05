@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "E": {
+      "type": "neoforge:nbt",
+      "item": "arsmagicalegacy:affinity_essence",
+      "tag": "{\"arsmagicalegacy:affinity\":\"arsmagicalegacy:air\"}"
+    },
+    "G": {
+      "tag": "forge:ingots/gold"
+    },
+    "O": {
+      "item": "minecraft:obsidian"
+    },
+    "R": {
+      "item": "arsmagicalegacy:red_rune"
+    }
+  },
+  "pattern": [
+    "GOG",
+    "ORO",
+    " E "
+  ],
+  "result": {
+    "item": "arsmagicalegacy:battlemage_helmet"
+  }
+}

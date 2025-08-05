@@ -1,0 +1,55 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="Don't Be a Jerk License"
+issueTrackerURL="https://github.com/ArsMagica2Return/Ars-Magica-RETURN/issues"
+
+[[mods]]
+modId="arsmagica2return"
+version="${file.jarVersion}"
+displayName="Ars Magica 2 Return"
+updateJSONURL="https://github.com/ArsMagica2Return/Ars-Magica-RETURN/releases"
+displayURL="https://github.com/ArsMagica2Return/Ars-Magica-RETURN"
+logoFile="logo.png"
+credits="Original Ars Magica 2 by Mithion, Ars Magica Legacy by MinecraftschurliMods"
+authors="ArsMagica2Return Team"
+description='''
+Complete revival of the legendary Ars Magica 2 mod with new features and improvements.
+The mod adds a deep magic system with customizable spells, magical blocks,
+artifacts and much more. Create your own spells, explore magical secrets
+and become a master of the magical arts!
+'''
+
+[[dependencies.arsmagica2return]]
+modId="forge"
+mandatory=true
+versionRange="[47,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.arsmagica2return]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.20.1,1.21)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.arsmagica2return]]
+modId="patchouli"
+mandatory=true
+versionRange="[1.20.1-81,)"
+ordering="AFTER"
+side="BOTH"
+
+[[dependencies.arsmagica2return]]
+modId="geckolib"
+mandatory=true
+versionRange="[4.2,)"
+ordering="AFTER"
+side="BOTH"
+
+[[dependencies.arsmagica2return]]
+modId="curios"
+mandatory=false
+versionRange="[5.4,)"
+ordering="AFTER"
+side="BOTH"

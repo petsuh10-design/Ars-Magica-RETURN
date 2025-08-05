@@ -1,0 +1,214 @@
+package com.arsmagica2.arsmagica2return.api;
+
+import com.arsmagica2.arsmagica2return.api.affinity.Affinity;
+import com.arsmagica2.arsmagica2return.api.affinity.IAffinityHelper;
+import com.arsmagica2.arsmagica2return.api.etherium.IEtheriumHelper;
+import com.arsmagica2.arsmagica2return.api.magic.ContingencyType;
+import com.arsmagica2.arsmagica2return.api.magic.IBurnoutHelper;
+import com.arsmagica2.arsmagica2return.api.magic.IContingencyHelper;
+import com.arsmagica2.arsmagica2return.api.magic.IMagicHelper;
+import com.arsmagica2.arsmagica2return.api.magic.IManaHelper;
+import com.arsmagica2.arsmagica2return.api.magic.IRiftHelper;
+import com.arsmagica2.arsmagica2return.api.ritual.RitualEffect;
+import com.arsmagica2.arsmagica2return.api.ritual.RitualRequirement;
+import com.arsmagica2.arsmagica2return.api.ritual.RitualTrigger;
+import com.arsmagica2.arsmagica2return.api.skill.ISkillHelper;
+import com.arsmagica2.arsmagica2return.api.skill.SkillPoint;
+import com.arsmagica2.arsmagica2return.api.spell.ISpell;
+import com.arsmagica2.arsmagica2return.api.spell.ISpellDataManager;
+import com.arsmagica2.arsmagica2return.api.spell.ISpellHelper;
+import com.arsmagica2.arsmagica2return.api.spell.ISpellPart;
+import com.arsmagica2.arsmagica2return.api.spell.ShapeGroup;
+import com.arsmagica2.arsmagica2return.api.spell.SpellIngredientType;
+import com.arsmagica2.arsmagica2return.api.spell.SpellStack;
+import com.mojang.serialization.Codec;
+import net.minecraft.core.Registry;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.fml.loading.FMLEnvironment;
+import net.minecraftforge.fml.loading.FMLLoader;
+import net.minecraftforge.neoforge.common.util.Lazy;
+import org.jetbrains.annotations.ApiStatus.Experimental;
+import org.jetbrains.annotations.ApiStatus.Internal;
+import org.jetbrains.annotations.ApiStatus.NonExtendable;
+import org.slf4j.LoggerFactory;
+
+import java.util.List;
+import java.util.Optional;
+import java.util.ServiceLoader;
+
+@NonExtendable
+public interface ArsMagicaAPI {
+    String MOD_ID = "arsmagica2return";
+    ResourceLocation PREFAB_SPELLS_CREATIVE_TAB = new ResourceLocation(MOD_ID, "prefab_spells");
+    ResourceLocation MAIN_CREATIVE_TAB = new ResourceLocation(MOD_ID, "main");
+
+    /**
+     * @return The API instance.
+     */
+    static ArsMagicaAPI get() {
+        return InstanceHolder.LAZY_INSTANCE.get();
+    }
+
+    /**
+     * @return The arcane compendium item stack.
+     */
+    ItemStack getBookStack();
+
+    /**
+     * @return The registry for skill points.
+     */
+    Registry<SkillPoint> getSkillPointRegistry();
+
+    /**
+     * @return The registry for affinities.
+     */
+    Registry<Affinity> getAffinityRegistry();
+
+    /**
+     * @return The registry for spell parts.
+     */
+    Registry<ISpellPart> getSpellPartRegistry();
+
+    /**
+     * @return The registry for contingency types.
+     */
+    Registry<ContingencyType> getContingencyTypeRegistry();
+
+    @Experimental
+    Registry<Codec<? extends RitualTrigger>> getRitualTriggerTypeRegistry();
+
+    @Experimental
+    Registry<Codec<? extends RitualRequirement>> getRitualRequirementTypeRegistry();
+
+    @Experimental
+    Registry<Codec<? extends RitualEffect>> getRitualEffectTypeRegistry();
+
+    Registry<SpellIngredientType<?>> getSpellIngredientTypeRegistry();
+
+    /**
+     * @return The spell data manager instance.
+     */
+    ISpellDataManager getSpellDataManager();
+
+    /**
+     * @return The skill helper instance.
+     */
+    ISkillHelper getSkillHelper();
+
+    /**
+     * @return The affinity helper instance.
+     */
+    IAffinityHelper getAffinityHelper();
+
+    /**
+     * @return The magic helper instance.
+     */
+    IMagicHelper getMagicHelper();
+
+    /**
+     * @return The mana helper instance.
+     */
+    IManaHelper getManaHelper();
+
+    /**
+     * @return The burnout helper instance.
+     */
+    IBurnoutHelper getBurnoutHelper();
+
+    /**
+     * @return The spell helper instance.
+     */
+    ISpellHelper getSpellHelper();
+
+    /**
+     * @return The rift helper instance.
+     */
+    IRiftHelper getRiftHelper();
+
+    /**
+     * @return The etherium helper instance.
+     */
+    IEtheriumHelper getEtheriumHelper();
+
+    /**
+     * @return The contingency helper instance.
+     */
+    IContingencyHelper getContingencyHelper();
+
+    /**
+     * Opens the occulus gui for the given player.
+     *
+     * @param player The player to open the gui for.
+     */
+    void openOcculusGui(Player player);
+
+    /**
+     * Opens the spell customization gui for the given player.
+     *
+     * @param level  The level to open the gui in.
+     * @param player The player to open the gui for.
+     * @param stack  The spell item stack to open the gui for.
+     */
+    void openSpellCustomizationGui(Level level, Player player, ItemStack stack);
+
+    /**
+     * Opens the spell recipe gui for the given player.
+     *
+     * @param level  The level to open the gui in.
+     * @param player The player to open the gui for.
+     * @param stack  The spell recipe item stack to open the gui for.
+     */
+    void openSpellRecipeGui(Level level, Player player, ItemStack stack);
+
+    /**
+     * Make an instance of ISpell.
+     *
+     * @param shapeGroups    The shape groups to use.
+     * @param spellStack     The spell stack to use.
+     * @param additionalData The additional data to use.
+     * @return The spell instance.
+     */
+    ISpell makeSpell(List<ShapeGroup> shapeGroups, SpellStack spellStack, CompoundTag additionalData);
+
+    /**
+     * Make an instance of ISpell.
+     *
+     * @param spellStack     The spell stack to use.
+     * @param shapeGroups    The shape groups to use.
+     * @return The spell instance.
+     */
+    ISpell makeSpell(SpellStack spellStack, ShapeGroup... shapeGroups);
+
+    /**
+     * @param block     The block to check the transition for.
+     * @param level     The level to check the transition for.
+     * @param spellPart The spell part to check the transition for.
+     * @return The transitioned block state for the given block and spell part or empty.
+     */
+    Optional<BlockState> getSpellTransformationFor(BlockState block, Level level, ResourceLocation spellPart);
+
+    @Internal
+    final class InstanceHolder {
+        private InstanceHolder() {}
+
+        private static final Lazy<ArsMagicaAPI> LAZY_INSTANCE = Lazy.concurrentOf(() -> {
+            Optional<ArsMagicaAPI> impl = ServiceLoader.load(FMLLoader.getGameLayer(), ArsMagicaAPI.class).findFirst();
+            if (!FMLEnvironment.production) {
+                return impl.orElseThrow(() -> {
+                    IllegalStateException exception = new IllegalStateException("Unable to find implementation for IArsMagicaAPI!");
+                    LoggerFactory.getLogger(MOD_ID).error(exception.getMessage(), exception);
+                    return exception;
+                });
+            }
+            return impl.orElseGet(() -> {
+                LoggerFactory.getLogger(MOD_ID).error("Unable to find implementation for IArsMagicaAPI!");
+                return null;
+            });
+        });
+    }
+}

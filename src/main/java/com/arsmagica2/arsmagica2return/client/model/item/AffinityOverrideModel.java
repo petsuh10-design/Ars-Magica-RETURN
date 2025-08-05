@@ -1,0 +1,39 @@
+package com.arsmagica2.arsmagica2return.client.model.item;
+
+import com.arsmagica2.arsmagica2return.api.ArsMagicaAPI;
+import com.arsmagica2.arsmagica2return.api.affinity.Affinity;
+import com.arsmagica2.arsmagica2return.api.affinity.IAffinityItem;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.multiplayer.ClientLevel;
+import net.minecraft.client.renderer.block.model.ItemOverrides;
+import net.minecraft.client.resources.model.BakedModel;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.neoforge.client.model.BakedModelWrapper;
+import org.jetbrains.annotations.Nullable;
+
+public class AffinityOverrideModel extends BakedModelWrapper<BakedModel> {
+    private final ItemOverrides overrides = new AffinityItemOverrides();
+
+    public AffinityOverrideModel(BakedModel originalModel) {
+        super(originalModel);
+    }
+
+    @Override
+    public ItemOverrides getOverrides() {
+        return overrides;
+    }
+
+    private static class AffinityItemOverrides extends ItemOverrides {
+        @Override
+        public BakedModel resolve(BakedModel model, ItemStack stack, @Nullable ClientLevel level, @Nullable LivingEntity entity, int seed) {
+            Affinity affinity = ArsMagicaAPI.get().getAffinityHelper().getAffinityForStack(stack);
+            if (!(stack.getItem() instanceof IAffinityItem)) return model;
+            if (affinity.getId().equals(Affinity.NONE) && !((IAffinityItem) stack.getItem()).hasNoneVariant()) return model;
+            ResourceLocation rl = new ResourceLocation(affinity.getId().getNamespace(), "item/" + BuiltInRegistries.ITEM.getKey(stack.getItem()).getPath() + "_" + affinity.getId().getPath());
+            return Minecraft.getInstance().getModelManager().getModel(rl);
+        }
+    }
+}

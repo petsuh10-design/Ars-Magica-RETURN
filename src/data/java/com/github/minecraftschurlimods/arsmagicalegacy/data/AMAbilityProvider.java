@@ -1,0 +1,50 @@
+package com.arsmagica2.arsmagica2return.data;
+
+import com.arsmagica2.arsmagica2return.api.ArsMagicaAPI;
+import com.arsmagica2.arsmagica2return.api.affinity.Ability;
+import com.arsmagica2.arsmagica2return.api.data.AbilityProvider;
+import com.arsmagica2.arsmagica2return.common.init.AMAbilities;
+import com.arsmagica2.arsmagica2return.common.init.AMAffinities;
+import net.minecraft.advancements.critereon.MinMaxBounds;
+
+class AMAbilityProvider extends AbilityProvider {
+    AMAbilityProvider() {
+        super(ArsMagicaAPI.MOD_ID);
+    }
+
+    @Override
+    public void generate() {
+        add(AMAbilities.FIRE_RESISTANCE, new Ability(AMAffinities.FIRE.value(), MinMaxBounds.Doubles.between(0.01, 1)));
+        add(AMAbilities.FIRE_PUNCH, new Ability(AMAffinities.FIRE.value(), MinMaxBounds.Doubles.atLeast(1)));
+        add(AMAbilities.WATER_DAMAGE_FIRE, new Ability(AMAffinities.FIRE.value(), MinMaxBounds.Doubles.between(0.5, 1)));
+        add(AMAbilities.SWIM_SPEED, new Ability(AMAffinities.WATER.value(), MinMaxBounds.Doubles.between(0.01, 1)));
+        add(AMAbilities.ENDERMAN_THORNS, new Ability(AMAffinities.WATER.value(), MinMaxBounds.Doubles.atLeast(1)));
+        add(AMAbilities.NETHER_DAMAGE_WATER, new Ability(AMAffinities.WATER.value(), MinMaxBounds.Doubles.between(0.5, 1)));
+        add(AMAbilities.RESISTANCE, new Ability(AMAffinities.EARTH.value(), MinMaxBounds.Doubles.between(0.01, 1)));
+        add(AMAbilities.HASTE, new Ability(AMAffinities.EARTH.value(), MinMaxBounds.Doubles.between(0.01, 1)));
+        add(AMAbilities.FALL_DAMAGE, new Ability(AMAffinities.EARTH.value(), MinMaxBounds.Doubles.between(0.5, 1)));
+        add(AMAbilities.JUMP_BOOST, new Ability(AMAffinities.AIR.value(), MinMaxBounds.Doubles.between(0.01, 1)));
+        add(AMAbilities.FEATHER_FALLING, new Ability(AMAffinities.AIR.value(), MinMaxBounds.Doubles.between(0.01, 1)));
+        add(AMAbilities.GRAVITY, new Ability(AMAffinities.AIR.value(), MinMaxBounds.Doubles.between(0.5, 1)));
+        add(AMAbilities.FROST_PUNCH, new Ability(AMAffinities.ICE.value(), MinMaxBounds.Doubles.between(0.01, 1)));
+        add(AMAbilities.FROST_WALKER, new Ability(AMAffinities.ICE.value(), MinMaxBounds.Doubles.atLeast(1)));
+        add(AMAbilities.SLOWNESS, new Ability(AMAffinities.ICE.value(), MinMaxBounds.Doubles.between(0.5, 1)));
+        add(AMAbilities.SPEED, new Ability(AMAffinities.LIGHTNING.value(), MinMaxBounds.Doubles.between(0.01, 1)));
+        add(AMAbilities.STEP_ASSIST, new Ability(AMAffinities.LIGHTNING.value(), MinMaxBounds.Doubles.atLeast(1)));
+        add(AMAbilities.WATER_DAMAGE_LIGHTNING, new Ability(AMAffinities.LIGHTNING.value(), MinMaxBounds.Doubles.between(0.5, 1)));
+        add(AMAbilities.THORNS, new Ability(AMAffinities.NATURE.value(), MinMaxBounds.Doubles.between(0.01, 1)));
+        add(AMAbilities.SATURATION, new Ability(AMAffinities.NATURE.value(), MinMaxBounds.Doubles.atLeast(1)));
+        add(AMAbilities.NETHER_DAMAGE_NATURE, new Ability(AMAffinities.NATURE.value(), MinMaxBounds.Doubles.between(0.5, 1)));
+        add(AMAbilities.SMITE, new Ability(AMAffinities.LIFE.value(), MinMaxBounds.Doubles.between(0.01, 1)));
+        add(AMAbilities.REGENERATION, new Ability(AMAffinities.LIFE.value(), MinMaxBounds.Doubles.atLeast(1)));
+        add(AMAbilities.NAUSEA, new Ability(AMAffinities.LIFE.value(), MinMaxBounds.Doubles.between(0.5, 1)));
+        add(AMAbilities.MANA_REDUCTION, new Ability(AMAffinities.ARCANE.value(), MinMaxBounds.Doubles.between(0.01, 1)));
+        add(AMAbilities.CLARITY, new Ability(AMAffinities.ARCANE.value(), MinMaxBounds.Doubles.atLeast(1)));
+        add(AMAbilities.MAGIC_DAMAGE, new Ability(AMAffinities.ARCANE.value(), MinMaxBounds.Doubles.between(0.5, 1)));
+        add(AMAbilities.POISON_RESISTANCE, new Ability(AMAffinities.ENDER.value(), MinMaxBounds.Doubles.between(0.5, 1)));
+        add(AMAbilities.NIGHT_VISION, new Ability(AMAffinities.ENDER.value(), MinMaxBounds.Doubles.between(0.5, 1)));
+        add(AMAbilities.ENDERMAN_PUMPKIN, new Ability(AMAffinities.ENDER.value(), MinMaxBounds.Doubles.atLeast(1)));
+        add(AMAbilities.LIGHT_HEALTH_REDUCTION, new Ability(AMAffinities.ENDER.value(), MinMaxBounds.Doubles.between(0.5, 0.99)));
+        add(AMAbilities.WATER_HEALTH_REDUCTION, new Ability(AMAffinities.ENDER.value(), MinMaxBounds.Doubles.between(0.5, 0.99)));
+    }
+}

@@ -1,0 +1,21 @@
+package com.arsmagica2.arsmagica2return.client.gui.dragndrop;
+
+import net.minecraft.client.gui.components.Renderable;
+import net.minecraft.client.gui.narration.NarratableEntry;
+
+public abstract class Draggable<T> implements Renderable, NarratableEntry {
+    protected final int width;
+    protected final int height;
+    protected final T content;
+
+    protected Draggable(int width, int height, T content) {
+        this.width = width;
+        this.height = height;
+        this.content = content;
+    }
+
+    @Override
+    public NarrationPriority narrationPriority() {
+        return NarrationPriority.NONE;
+    }
+}
