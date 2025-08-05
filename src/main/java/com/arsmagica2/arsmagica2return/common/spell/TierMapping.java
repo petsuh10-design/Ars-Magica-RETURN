@@ -13,8 +13,8 @@ import net.minecraft.util.GsonHelper;
 import net.minecraft.util.profiling.ProfilerFiller;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.Tiers;
-import net.neoforged.neoforge.common.TierSortingRegistry;
-import net.neoforged.neoforge.common.util.Lazy;
+import net.minecraftforge.neoforge.common.TierSortingRegistry;
+import net.minecraftforge.neoforge.common.util.Lazy;
 import org.jetbrains.annotations.Nullable;
 import org.slf4j.Logger;
 

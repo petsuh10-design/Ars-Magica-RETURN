@@ -17,10 +17,10 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.entity.EntityTypeTest;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
-import net.neoforged.fml.LogicalSide;
-import net.neoforged.neoforge.common.NeoForge;
-import net.neoforged.neoforge.common.crafting.NBTIngredient;
-import net.neoforged.neoforge.event.TickEvent;
+import net.minecraftforge.fml.LogicalSide;
+import net.minecraftforge.neoforge.common.NeoForge;
+import net.minecraftforge.neoforge.common.crafting.NBTIngredient;
+import net.minecraftforge.neoforge.event.TickEvent;
 
 import java.util.ArrayList;
 import java.util.Arrays;

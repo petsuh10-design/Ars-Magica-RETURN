@@ -2,8 +2,8 @@ package com.arsmagica2.arsmagica2return.api.event;
 
 import com.arsmagica2.arsmagica2return.api.affinity.Affinity;
 import net.minecraft.world.entity.player.Player;
-import net.neoforged.bus.api.ICancellableEvent;
-import net.neoforged.neoforge.event.entity.player.PlayerEvent;
+import net.minecraftforge.bus.api.ICancellableEvent;
+import net.minecraftforge.neoforge.event.entity.player.PlayerEvent;
 
 public abstract class AffinityChangingEvent extends PlayerEvent {
     /**

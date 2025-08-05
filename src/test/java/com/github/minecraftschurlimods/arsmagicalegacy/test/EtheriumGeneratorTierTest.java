@@ -6,8 +6,8 @@ import com.arsmagica2.arsmagica2return.common.init.AMBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.gametest.framework.GameTest;
 import net.minecraft.gametest.framework.GameTestHelper;
-import net.neoforged.testframework.annotation.ForEachTest;
-import net.neoforged.testframework.annotation.TestHolder;
+import net.minecraftforge.testframework.annotation.ForEachTest;
+import net.minecraftforge.testframework.annotation.TestHolder;
 
 @ForEachTest(groups = ArsMagicaAPI.MOD_ID + ".etherium_generator_tier_test")
 public class EtheriumGeneratorTierTest {

@@ -11,8 +11,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.neoforged.neoforge.capabilities.BlockCapability;
-import net.neoforged.neoforge.common.util.Lazy;
+import net.minecraftforge.neoforge.capabilities.BlockCapability;
+import net.minecraftforge.neoforge.common.util.Lazy;
 import org.jetbrains.annotations.Nullable;
 
 public final class EtheriumHelper implements IEtheriumHelper {

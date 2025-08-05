@@ -12,9 +12,9 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.item.ItemStack;
-import net.neoforged.testframework.annotation.ForEachTest;
-import net.neoforged.testframework.annotation.TestHolder;
-import net.neoforged.testframework.gametest.EmptyTemplate;
+import net.minecraftforge.testframework.annotation.ForEachTest;
+import net.minecraftforge.testframework.annotation.TestHolder;
+import net.minecraftforge.testframework.gametest.EmptyTemplate;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

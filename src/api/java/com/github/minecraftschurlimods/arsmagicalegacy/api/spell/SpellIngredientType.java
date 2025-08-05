@@ -6,7 +6,7 @@ import com.mojang.serialization.Codec;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
-import net.neoforged.neoforge.common.util.Lazy;
+import net.minecraftforge.neoforge.common.util.Lazy;
 
 import java.util.function.Supplier;
 

@@ -13,8 +13,8 @@ import net.minecraft.core.RegistryAccess;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.neoforged.fml.util.thread.EffectiveSide;
-import net.neoforged.neoforge.server.ServerLifecycleHooks;
+import net.minecraftforge.fml.util.thread.EffectiveSide;
+import net.minecraftforge.neoforge.server.ServerLifecycleHooks;
 import org.jetbrains.annotations.Nullable;
 
 public final class ClientHelper {

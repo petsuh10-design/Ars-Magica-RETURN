@@ -15,8 +15,8 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
-import net.neoforged.neoforge.common.NeoForge;
-import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
+import net.minecraftforge.neoforge.common.NeoForge;
+import net.minecraftforge.neoforge.event.entity.EntityJoinLevelEvent;
 
 import java.util.Map;
 

@@ -18,8 +18,8 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.Vec3;
-import net.neoforged.neoforge.entity.PartEntity;
-import net.neoforged.neoforge.network.PacketDistributor;
+import net.minecraftforge.neoforge.entity.PartEntity;
+import net.minecraftforge.neoforge.network.PacketDistributor;
 import org.jetbrains.annotations.Nullable;
 
 public class Wall extends AbstractSpellEntity {

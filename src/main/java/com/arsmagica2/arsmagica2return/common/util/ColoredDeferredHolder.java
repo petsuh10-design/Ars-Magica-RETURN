@@ -2,8 +2,8 @@ package com.arsmagica2.arsmagica2return.common.util;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.DyeColor;
-import net.neoforged.neoforge.registries.DeferredHolder;
-import net.neoforged.neoforge.registries.DeferredRegister;
+import net.minecraftforge.neoforge.registries.DeferredHolder;
+import net.minecraftforge.neoforge.registries.DeferredRegister;
 
 import java.util.EnumMap;
 import java.util.Map;

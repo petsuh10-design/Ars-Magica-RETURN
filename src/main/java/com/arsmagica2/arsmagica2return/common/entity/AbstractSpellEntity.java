@@ -13,7 +13,7 @@ import net.minecraft.world.entity.OwnableEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
-import net.neoforged.neoforge.entity.PartEntity;
+import net.minecraftforge.neoforge.entity.PartEntity;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.UUID;

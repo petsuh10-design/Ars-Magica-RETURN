@@ -9,8 +9,8 @@ import net.minecraft.advancements.AdvancementHolder;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
-import net.neoforged.neoforge.common.data.AdvancementProvider;
-import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.minecraftforge.neoforge.common.data.AdvancementProvider;
+import net.minecraftforge.neoforge.common.data.ExistingFileHelper;
 
 import java.util.List;
 import java.util.Optional;

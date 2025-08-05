@@ -6,8 +6,8 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.storage.loot.BuiltInLootTables;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
-import net.neoforged.neoforge.common.data.GlobalLootModifierProvider;
-import net.neoforged.neoforge.common.loot.LootTableIdCondition;
+import net.minecraftforge.neoforge.common.data.GlobalLootModifierProvider;
+import net.minecraftforge.neoforge.common.loot.LootTableIdCondition;
 
 import java.util.List;
 

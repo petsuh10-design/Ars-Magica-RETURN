@@ -19,8 +19,8 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
-import net.neoforged.neoforge.common.NeoForge;
-import net.neoforged.neoforge.event.VanillaGameEvent;
+import net.minecraftforge.neoforge.common.NeoForge;
+import net.minecraftforge.neoforge.event.VanillaGameEvent;
 
 import java.util.Map;
 

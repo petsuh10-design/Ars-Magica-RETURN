@@ -17,8 +17,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.block.Blocks;
-import net.neoforged.testframework.annotation.ForEachTest;
-import net.neoforged.testframework.annotation.TestHolder;
+import net.minecraftforge.testframework.annotation.ForEachTest;
+import net.minecraftforge.testframework.annotation.TestHolder;
 
 import java.lang.invoke.MethodHandles;
 import java.util.Map;

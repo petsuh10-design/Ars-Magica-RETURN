@@ -3,7 +3,7 @@ package com.arsmagica2.arsmagica2return.common.magic.rift;
 import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.neoforged.neoforge.items.IItemHandlerModifiable;
+import net.minecraftforge.neoforge.items.IItemHandlerModifiable;
 
 public record RiftContainer(IItemHandlerModifiable handler) implements Container {
     @Override

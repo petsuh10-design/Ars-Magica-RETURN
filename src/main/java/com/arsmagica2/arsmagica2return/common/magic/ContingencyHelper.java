@@ -11,12 +11,12 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.EntityHitResult;
-import net.neoforged.neoforge.attachment.AttachmentType;
-import net.neoforged.neoforge.common.NeoForge;
-import net.neoforged.neoforge.common.util.Lazy;
-import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
-import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
-import net.neoforged.neoforge.event.entity.living.LivingFallEvent;
+import net.minecraftforge.neoforge.attachment.AttachmentType;
+import net.minecraftforge.neoforge.common.NeoForge;
+import net.minecraftforge.neoforge.common.util.Lazy;
+import net.minecraftforge.neoforge.event.entity.living.LivingDamageEvent;
+import net.minecraftforge.neoforge.event.entity.living.LivingDeathEvent;
+import net.minecraftforge.neoforge.event.entity.living.LivingFallEvent;
 
 import java.util.Objects;
 import java.util.function.Supplier;

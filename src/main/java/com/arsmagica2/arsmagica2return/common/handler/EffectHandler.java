@@ -7,16 +7,16 @@ import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.LivingEntity;
-import net.neoforged.bus.api.EventPriority;
-import net.neoforged.bus.api.IEventBus;
-import net.neoforged.neoforge.event.entity.EntityEvent;
-import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
-import net.neoforged.neoforge.event.entity.EntityTeleportEvent;
-import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
-import net.neoforged.neoforge.event.entity.living.LivingEvent;
-import net.neoforged.neoforge.event.entity.living.LivingFallEvent;
-import net.neoforged.neoforge.event.entity.living.LivingHurtEvent;
-import net.neoforged.neoforge.event.entity.living.MobEffectEvent;
+import net.minecraftforge.bus.api.EventPriority;
+import net.minecraftforge.bus.api.IEventBus;
+import net.minecraftforge.neoforge.event.entity.EntityEvent;
+import net.minecraftforge.neoforge.event.entity.EntityJoinLevelEvent;
+import net.minecraftforge.neoforge.event.entity.EntityTeleportEvent;
+import net.minecraftforge.neoforge.event.entity.living.LivingDeathEvent;
+import net.minecraftforge.neoforge.event.entity.living.LivingEvent;
+import net.minecraftforge.neoforge.event.entity.living.LivingFallEvent;
+import net.minecraftforge.neoforge.event.entity.living.LivingHurtEvent;
+import net.minecraftforge.neoforge.event.entity.living.MobEffectEvent;
 
 import java.util.Objects;
 

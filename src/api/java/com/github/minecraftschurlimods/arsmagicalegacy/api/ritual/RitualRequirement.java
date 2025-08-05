@@ -9,7 +9,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.ExtraCodecs;
 import net.minecraft.world.entity.player.Player;
-import net.neoforged.neoforge.common.util.TriPredicate;
+import net.minecraftforge.neoforge.common.util.TriPredicate;
 
 import java.util.function.Function;
 

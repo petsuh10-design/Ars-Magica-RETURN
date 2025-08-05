@@ -7,10 +7,10 @@ import com.github.minecraftschurlimods.betterkeybindlib.ItemInHandKeyConflictCon
 import com.github.minecraftschurlimods.betterkeybindlib.Keybind;
 import com.github.minecraftschurlimods.betterkeybindlib.KeybindManager;
 import com.mojang.blaze3d.platform.InputConstants;
-import net.neoforged.bus.api.IEventBus;
-import net.neoforged.neoforge.client.settings.KeyConflictContext;
-import net.neoforged.neoforge.client.settings.KeyModifier;
-import net.neoforged.neoforge.network.PacketDistributor;
+import net.minecraftforge.bus.api.IEventBus;
+import net.minecraftforge.neoforge.client.settings.KeyConflictContext;
+import net.minecraftforge.neoforge.client.settings.KeyModifier;
+import net.minecraftforge.neoforge.network.PacketDistributor;
 
 public final class Keybinds {
     public static final KeybindManager KEYBIND_MANAGER = KeybindManager.get(ArsMagicaAPI.MOD_ID);

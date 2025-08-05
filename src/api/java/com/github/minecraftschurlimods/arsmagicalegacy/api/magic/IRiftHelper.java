@@ -1,7 +1,7 @@
 package com.arsmagica2.arsmagica2return.api.magic;
 
 import net.minecraft.world.entity.player.Player;
-import net.neoforged.neoforge.items.IItemHandlerModifiable;
+import net.minecraftforge.neoforge.items.IItemHandlerModifiable;
 
 /**
  * Interface for rift related helper methods.

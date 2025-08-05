@@ -5,12 +5,12 @@ import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.yggdrasil.ProfileResult;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
-import net.neoforged.neoforge.server.ServerLifecycleHooks;
-import net.neoforged.neoforge.server.permission.events.PermissionGatherEvent;
-import net.neoforged.neoforge.server.permission.nodes.PermissionDynamicContextKey;
-import net.neoforged.neoforge.server.permission.nodes.PermissionNode;
-import net.neoforged.neoforge.server.permission.nodes.PermissionType;
-import net.neoforged.neoforge.server.permission.nodes.PermissionTypes;
+import net.minecraftforge.neoforge.server.ServerLifecycleHooks;
+import net.minecraftforge.neoforge.server.permission.events.PermissionGatherEvent;
+import net.minecraftforge.neoforge.server.permission.nodes.PermissionDynamicContextKey;
+import net.minecraftforge.neoforge.server.permission.nodes.PermissionNode;
+import net.minecraftforge.neoforge.server.permission.nodes.PermissionType;
+import net.minecraftforge.neoforge.server.permission.nodes.PermissionTypes;
 
 import java.util.Collection;
 import java.util.HashSet;

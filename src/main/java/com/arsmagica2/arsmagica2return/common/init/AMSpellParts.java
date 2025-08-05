@@ -69,8 +69,8 @@ import com.arsmagica2.arsmagica2return.common.spell.shape.Zone;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
-import net.neoforged.neoforge.common.NeoForgeMod;
-import net.neoforged.neoforge.registries.DeferredHolder;
+import net.minecraftforge.neoforge.common.NeoForgeMod;
+import net.minecraftforge.neoforge.registries.DeferredHolder;
 import org.jetbrains.annotations.ApiStatus.Internal;
 import org.jetbrains.annotations.ApiStatus.NonExtendable;
 

@@ -2,9 +2,9 @@ package com.arsmagica2.arsmagica2return.common.magic;
 
 import com.arsmagica2.arsmagica2return.api.magic.IRiftHelper;
 import net.minecraft.world.entity.player.Player;
-import net.neoforged.neoforge.attachment.AttachmentType;
-import net.neoforged.neoforge.common.util.Lazy;
-import net.neoforged.neoforge.items.ItemStackHandler;
+import net.minecraftforge.neoforge.attachment.AttachmentType;
+import net.minecraftforge.neoforge.common.util.Lazy;
+import net.minecraftforge.neoforge.items.ItemStackHandler;
 
 import java.util.function.Supplier;
 

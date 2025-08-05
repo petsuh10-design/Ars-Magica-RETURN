@@ -9,8 +9,8 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.neoforged.neoforge.items.IItemHandler;
-import net.neoforged.neoforge.items.wrapper.InvWrapper;
+import net.minecraftforge.neoforge.items.IItemHandler;
+import net.minecraftforge.neoforge.items.wrapper.InvWrapper;
 
 /**
  * Mostly taken from McJty's tutorials and the Botania mod.

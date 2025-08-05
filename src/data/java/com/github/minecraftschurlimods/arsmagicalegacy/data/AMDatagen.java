@@ -15,11 +15,11 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.server.packs.metadata.pack.PackMetadataSection;
 import net.minecraft.util.InclusiveRange;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.Mod;
-import net.neoforged.neoforge.common.data.ExistingFileHelper;
-import net.neoforged.neoforge.data.event.GatherDataEvent;
-import net.neoforged.neoforgespi.language.IModInfo;
+import net.minecraftforge.bus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.neoforge.common.data.ExistingFileHelper;
+import net.minecraftforge.neoforge.data.event.GatherDataEvent;
+import net.minecraftforge.neoforgespi.language.IModInfo;
 import org.apache.commons.lang3.function.TriFunction;
 
 import java.util.HashMap;

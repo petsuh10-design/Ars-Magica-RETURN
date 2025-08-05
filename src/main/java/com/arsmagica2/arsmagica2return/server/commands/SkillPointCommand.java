@@ -19,7 +19,7 @@ import net.minecraft.commands.arguments.ResourceLocationArgument;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
-import net.neoforged.neoforge.server.permission.PermissionAPI;
+import net.minecraftforge.neoforge.server.permission.PermissionAPI;
 
 import java.util.Collection;
 import java.util.List;

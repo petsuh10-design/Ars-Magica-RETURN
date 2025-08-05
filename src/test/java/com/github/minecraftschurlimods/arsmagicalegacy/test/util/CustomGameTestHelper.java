@@ -5,9 +5,9 @@ import net.minecraft.gametest.framework.GameTestAssertException;
 import net.minecraft.gametest.framework.GameTestInfo;
 import net.minecraft.world.level.GameType;
 import net.minecraft.world.phys.Vec3;
-import net.neoforged.testframework.gametest.ExtendedGameTestHelper;
-import net.neoforged.testframework.gametest.ExtendedSequence;
-import net.neoforged.testframework.gametest.GameTestPlayer;
+import net.minecraftforge.testframework.gametest.ExtendedGameTestHelper;
+import net.minecraftforge.testframework.gametest.ExtendedSequence;
+import net.minecraftforge.testframework.gametest.GameTestPlayer;
 import org.jetbrains.annotations.Contract;
 
 import java.util.function.Supplier;

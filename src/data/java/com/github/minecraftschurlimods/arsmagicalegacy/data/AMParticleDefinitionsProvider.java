@@ -5,7 +5,7 @@ import com.arsmagica2.arsmagica2return.common.init.AMParticleTypes;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
-import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.minecraftforge.neoforge.common.data.ExistingFileHelper;
 
 import java.util.function.Supplier;
 

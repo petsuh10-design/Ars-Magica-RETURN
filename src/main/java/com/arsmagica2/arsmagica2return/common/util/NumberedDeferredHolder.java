@@ -3,8 +3,8 @@ package com.arsmagica2.arsmagica2return.common.util;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.RandomSource;
-import net.neoforged.neoforge.registries.DeferredHolder;
-import net.neoforged.neoforge.registries.DeferredRegister;
+import net.minecraftforge.neoforge.registries.DeferredHolder;
+import net.minecraftforge.neoforge.registries.DeferredRegister;
 
 import java.util.Collections;
 import java.util.Map;

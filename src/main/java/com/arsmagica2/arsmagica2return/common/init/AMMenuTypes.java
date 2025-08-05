@@ -7,8 +7,8 @@ import com.arsmagica2.arsmagica2return.common.item.spellbook.SpellBookMenu;
 import com.arsmagica2.arsmagica2return.common.magic.rift.RiftMenu;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.inventory.MenuType;
-import net.neoforged.neoforge.common.extensions.IMenuTypeExtension;
-import net.neoforged.neoforge.registries.DeferredHolder;
+import net.minecraftforge.neoforge.common.extensions.IMenuTypeExtension;
+import net.minecraftforge.neoforge.registries.DeferredHolder;
 import org.jetbrains.annotations.ApiStatus.Internal;
 import org.jetbrains.annotations.ApiStatus.NonExtendable;
 

@@ -3,7 +3,7 @@ package com.arsmagica2.arsmagica2return.data;
 import com.arsmagica2.arsmagica2return.api.ArsMagicaAPI;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
-import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.minecraftforge.neoforge.common.data.ExistingFileHelper;
 import top.theillusivec4.curios.api.CuriosDataProvider;
 
 import java.util.concurrent.CompletableFuture;

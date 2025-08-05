@@ -12,7 +12,7 @@ import com.github.minecraftschurlimods.codeclib.CodecDataManager;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.util.ExtraCodecs;
-import net.neoforged.neoforge.common.util.Lazy;
+import net.minecraftforge.neoforge.common.util.Lazy;
 import org.slf4j.LoggerFactory;
 
 import java.util.List;

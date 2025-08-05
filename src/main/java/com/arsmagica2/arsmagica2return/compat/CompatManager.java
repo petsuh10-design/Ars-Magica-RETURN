@@ -1,13 +1,13 @@
 package com.arsmagica2.arsmagica2return.compat;
 
 import com.mojang.logging.LogUtils;
-import net.neoforged.bus.api.IEventBus;
-import net.neoforged.fml.ModList;
-import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
-import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.neoforged.fml.event.lifecycle.InterModEnqueueEvent;
-import net.neoforged.neoforge.common.util.Lazy;
-import net.neoforged.neoforgespi.language.ModFileScanData;
+import net.minecraftforge.bus.api.IEventBus;
+import net.minecraftforge.fml.ModList;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
+import net.minecraftforge.neoforge.common.util.Lazy;
+import net.minecraftforge.neoforgespi.language.ModFileScanData;
 import org.objectweb.asm.Type;
 import org.slf4j.Logger;
 

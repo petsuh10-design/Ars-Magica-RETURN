@@ -11,11 +11,11 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.LivingEntity;
-import net.neoforged.neoforge.attachment.AttachmentType;
-import net.neoforged.neoforge.common.util.Lazy;
-import net.neoforged.neoforge.network.PacketDistributor;
-import net.neoforged.neoforge.network.handling.PlayPayloadContext;
-import net.neoforged.neoforge.network.registration.IPayloadRegistrar;
+import net.minecraftforge.neoforge.attachment.AttachmentType;
+import net.minecraftforge.neoforge.common.util.Lazy;
+import net.minecraftforge.neoforge.network.PacketDistributor;
+import net.minecraftforge.neoforge.network.handling.PlayPayloadContext;
+import net.minecraftforge.neoforge.network.registration.IPayloadRegistrar;
 
 import java.util.function.Supplier;
 

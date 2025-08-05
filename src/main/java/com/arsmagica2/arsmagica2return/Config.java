@@ -2,9 +2,9 @@ package com.arsmagica2.arsmagica2return;
 
 import com.arsmagica2.arsmagica2return.common.util.TranslationConstants;
 import com.github.minecraftschurlimods.betterhudlib.HUDElement;
-import net.neoforged.fml.ModLoadingContext;
-import net.neoforged.fml.config.ModConfig;
-import net.neoforged.neoforge.common.ModConfigSpec;
+import net.minecraftforge.fml.ModLoadingContext;
+import net.minecraftforge.fml.config.ModConfig;
+import net.minecraftforge.neoforge.common.ModConfigSpec;
 import org.apache.commons.lang3.tuple.Pair;
 import org.jetbrains.annotations.ApiStatus.Internal;
 

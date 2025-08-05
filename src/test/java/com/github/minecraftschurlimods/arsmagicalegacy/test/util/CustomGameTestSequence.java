@@ -4,8 +4,8 @@ import it.unimi.dsi.fastutil.ints.IntIterables;
 import it.unimi.dsi.fastutil.ints.IntIterators;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
-import net.neoforged.testframework.gametest.ExtendedSequence;
-import net.neoforged.testframework.gametest.ParametrizedGameTestSequence;
+import net.minecraftforge.testframework.gametest.ExtendedSequence;
+import net.minecraftforge.testframework.gametest.ParametrizedGameTestSequence;
 
 import java.util.function.Consumer;
 import java.util.function.Predicate;

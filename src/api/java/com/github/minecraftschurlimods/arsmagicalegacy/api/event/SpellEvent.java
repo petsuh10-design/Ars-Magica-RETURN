@@ -7,8 +7,8 @@ import com.arsmagica2.arsmagica2return.api.spell.ISpellPartStat;
 import com.arsmagica2.arsmagica2return.api.util.ItemFilter;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.phys.HitResult;
-import net.neoforged.bus.api.ICancellableEvent;
-import net.neoforged.neoforge.event.entity.living.LivingEvent;
+import net.minecraftforge.bus.api.ICancellableEvent;
+import net.minecraftforge.neoforge.event.entity.living.LivingEvent;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;

@@ -1,6 +1,6 @@
 package com.arsmagica2.arsmagica2return.server;
 
-import net.neoforged.neoforge.common.NeoForge;
+import net.minecraftforge.neoforge.common.NeoForge;
 
 public final class ServerInit {
     /**

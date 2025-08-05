@@ -3,7 +3,7 @@ package com.arsmagica2.arsmagica2return.common.init;
 import com.arsmagica2.arsmagica2return.api.spell.ISpell;
 import com.github.minecraftschurlimods.codeclib.CodecEntityDataSerializer;
 import net.minecraft.network.syncher.EntityDataSerializer;
-import net.neoforged.neoforge.registries.DeferredHolder;
+import net.minecraftforge.neoforge.registries.DeferredHolder;
 import org.jetbrains.annotations.ApiStatus.Internal;
 import org.jetbrains.annotations.ApiStatus.NonExtendable;
 

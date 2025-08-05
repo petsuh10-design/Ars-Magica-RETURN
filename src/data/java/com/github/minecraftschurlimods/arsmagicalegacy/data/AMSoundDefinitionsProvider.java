@@ -6,9 +6,9 @@ import net.minecraft.core.Holder;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
-import net.neoforged.neoforge.common.data.ExistingFileHelper;
-import net.neoforged.neoforge.common.data.SoundDefinition;
-import net.neoforged.neoforge.common.data.SoundDefinitionsProvider;
+import net.minecraftforge.neoforge.common.data.ExistingFileHelper;
+import net.minecraftforge.neoforge.common.data.SoundDefinition;
+import net.minecraftforge.neoforge.common.data.SoundDefinitionsProvider;
 
 import java.util.HashSet;
 import java.util.Set;

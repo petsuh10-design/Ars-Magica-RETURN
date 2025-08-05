@@ -11,7 +11,7 @@ import net.minecraft.commands.Commands;
 import net.minecraft.commands.arguments.EntityArgument;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
-import net.neoforged.neoforge.server.permission.PermissionAPI;
+import net.minecraftforge.neoforge.server.permission.PermissionAPI;
 
 import java.util.Collection;
 import java.util.List;

@@ -2,8 +2,8 @@ package com.arsmagica2.arsmagica2return.common.init;
 
 import com.arsmagica2.arsmagica2return.common.level.loot.AddPoolToTableModifier;
 import com.mojang.serialization.Codec;
-import net.neoforged.neoforge.common.loot.IGlobalLootModifier;
-import net.neoforged.neoforge.registries.DeferredHolder;
+import net.minecraftforge.neoforge.common.loot.IGlobalLootModifier;
+import net.minecraftforge.neoforge.registries.DeferredHolder;
 import org.jetbrains.annotations.ApiStatus.Internal;
 
 import static com.arsmagica2.arsmagica2return.common.init.AMRegistries.GLOBAL_LOOT_MODIFIERS;

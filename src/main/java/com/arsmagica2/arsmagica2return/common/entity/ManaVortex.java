@@ -16,7 +16,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
-import net.neoforged.neoforge.network.PacketDistributor;
+import net.minecraftforge.neoforge.network.PacketDistributor;
 
 public class ManaVortex extends Entity {
     private static final EntityDataAccessor<Integer> DURATION = SynchedEntityData.defineId(ManaVortex.class, EntityDataSerializers.INT);

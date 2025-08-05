@@ -38,10 +38,10 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
-import net.neoforged.neoforge.common.NeoForge;
-import net.neoforged.neoforge.common.util.Lazy;
-import net.neoforged.neoforge.items.wrapper.PlayerMainInvWrapper;
-import net.neoforged.neoforge.network.PacketDistributor;
+import net.minecraftforge.neoforge.common.NeoForge;
+import net.minecraftforge.neoforge.common.util.Lazy;
+import net.minecraftforge.neoforge.items.wrapper.PlayerMainInvWrapper;
+import net.minecraftforge.neoforge.network.PacketDistributor;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Collection;

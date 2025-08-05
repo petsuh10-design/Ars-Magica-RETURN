@@ -19,16 +19,16 @@ import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.monster.EnderMan;
 import net.minecraft.world.entity.player.Player;
-import net.neoforged.bus.api.Event;
-import net.neoforged.bus.api.EventPriority;
-import net.neoforged.bus.api.IEventBus;
-import net.neoforged.neoforge.common.NeoForgeMod;
-import net.neoforged.neoforge.event.entity.living.EnderManAngerEvent;
-import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
-import net.neoforged.neoforge.event.entity.living.LivingEvent;
-import net.neoforged.neoforge.event.entity.living.LivingFallEvent;
-import net.neoforged.neoforge.event.entity.living.LivingHurtEvent;
-import net.neoforged.neoforge.event.entity.living.MobEffectEvent;
+import net.minecraftforge.bus.api.Event;
+import net.minecraftforge.bus.api.EventPriority;
+import net.minecraftforge.bus.api.IEventBus;
+import net.minecraftforge.neoforge.common.NeoForgeMod;
+import net.minecraftforge.neoforge.event.entity.living.EnderManAngerEvent;
+import net.minecraftforge.neoforge.event.entity.living.LivingDeathEvent;
+import net.minecraftforge.neoforge.event.entity.living.LivingEvent;
+import net.minecraftforge.neoforge.event.entity.living.LivingFallEvent;
+import net.minecraftforge.neoforge.event.entity.living.LivingHurtEvent;
+import net.minecraftforge.neoforge.event.entity.living.MobEffectEvent;
 
 final class AbilityHandler {
     static void init(IEventBus forgeBus) {

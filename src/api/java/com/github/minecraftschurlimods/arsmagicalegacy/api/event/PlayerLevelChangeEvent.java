@@ -1,7 +1,7 @@
 package com.arsmagica2.arsmagica2return.api.event;
 
 import net.minecraft.world.entity.player.Player;
-import net.neoforged.neoforge.event.entity.player.PlayerEvent;
+import net.minecraftforge.neoforge.event.entity.player.PlayerEvent;
 
 /**
  * Event that fires when the player's magic level changes.

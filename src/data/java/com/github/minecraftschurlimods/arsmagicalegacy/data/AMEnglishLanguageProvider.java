@@ -35,10 +35,10 @@ import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.level.block.Block;
-import net.neoforged.neoforge.fluids.FluidType;
-import net.neoforged.neoforge.registries.DeferredBlock;
-import net.neoforged.neoforge.registries.DeferredHolder;
-import net.neoforged.neoforge.registries.DeferredItem;
+import net.minecraftforge.neoforge.fluids.FluidType;
+import net.minecraftforge.neoforge.registries.DeferredBlock;
+import net.minecraftforge.neoforge.registries.DeferredHolder;
+import net.minecraftforge.neoforge.registries.DeferredItem;
 
 import java.util.Map;
 import java.util.function.Supplier;

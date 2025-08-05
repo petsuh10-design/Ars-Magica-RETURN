@@ -38,12 +38,12 @@ import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.levelgen.placement.PlacementModifier;
 import net.minecraft.world.level.levelgen.placement.RarityFilter;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
-import net.neoforged.neoforge.common.world.BiomeModifier;
-import net.neoforged.neoforge.common.world.BiomeModifiers;
-import net.neoforged.neoforge.registries.NeoForgeRegistries;
-import net.neoforged.neoforge.registries.holdersets.AndHolderSet;
-import net.neoforged.neoforge.registries.holdersets.NotHolderSet;
-import net.neoforged.neoforge.registries.holdersets.OrHolderSet;
+import net.minecraftforge.neoforge.common.world.BiomeModifier;
+import net.minecraftforge.neoforge.common.world.BiomeModifiers;
+import net.minecraftforge.neoforge.registries.NeoForgeRegistries;
+import net.minecraftforge.neoforge.registries.holdersets.AndHolderSet;
+import net.minecraftforge.neoforge.registries.holdersets.NotHolderSet;
+import net.minecraftforge.neoforge.registries.holdersets.OrHolderSet;
 
 import java.util.ArrayList;
 import java.util.Arrays;

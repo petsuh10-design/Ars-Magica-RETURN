@@ -16,7 +16,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
-import net.neoforged.neoforge.common.IPlantable;
+import net.minecraftforge.neoforge.common.IPlantable;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.HashMap;

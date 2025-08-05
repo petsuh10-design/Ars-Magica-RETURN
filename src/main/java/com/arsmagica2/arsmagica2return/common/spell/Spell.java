@@ -28,9 +28,9 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
-import net.neoforged.neoforge.common.NeoForge;
-import net.neoforged.neoforge.common.util.Lazy;
-import net.neoforged.neoforge.server.permission.PermissionAPI;
+import net.minecraftforge.neoforge.common.NeoForge;
+import net.minecraftforge.neoforge.common.util.Lazy;
+import net.minecraftforge.neoforge.server.permission.PermissionAPI;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.UnmodifiableView;
 

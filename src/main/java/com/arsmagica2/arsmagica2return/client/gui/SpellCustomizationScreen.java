@@ -16,8 +16,8 @@ import net.minecraft.network.chat.CommonComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
-import net.neoforged.neoforge.client.gui.widget.ScrollPanel;
-import net.neoforged.neoforge.network.PacketDistributor;
+import net.minecraftforge.neoforge.client.gui.widget.ScrollPanel;
+import net.minecraftforge.neoforge.network.PacketDistributor;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;

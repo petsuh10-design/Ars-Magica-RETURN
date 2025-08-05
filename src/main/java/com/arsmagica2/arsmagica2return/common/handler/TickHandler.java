@@ -19,9 +19,9 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.enchantment.FrostWalkerEnchantment;
 import net.minecraft.world.level.LightLayer;
-import net.neoforged.bus.api.IEventBus;
-import net.neoforged.neoforge.event.TickEvent;
-import net.neoforged.neoforge.event.entity.living.LivingEvent;
+import net.minecraftforge.bus.api.IEventBus;
+import net.minecraftforge.neoforge.event.TickEvent;
+import net.minecraftforge.neoforge.event.entity.living.LivingEvent;
 
 import java.util.Objects;
 

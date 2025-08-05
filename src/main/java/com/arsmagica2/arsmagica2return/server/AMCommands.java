@@ -9,7 +9,7 @@ import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
-import net.neoforged.neoforge.event.RegisterCommandsEvent;
+import net.minecraftforge.neoforge.event.RegisterCommandsEvent;
 
 public final class AMCommands {
     static void registerCommands(RegisterCommandsEvent event) {

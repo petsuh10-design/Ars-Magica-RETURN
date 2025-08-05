@@ -14,9 +14,9 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.GameType;
 import net.minecraft.world.phys.Vec3;
-import net.neoforged.testframework.annotation.ForEachTest;
-import net.neoforged.testframework.annotation.TestHolder;
-import net.neoforged.testframework.gametest.ExtendedGameTestHelper;
+import net.minecraftforge.testframework.annotation.ForEachTest;
+import net.minecraftforge.testframework.annotation.TestHolder;
+import net.minecraftforge.testframework.gametest.ExtendedGameTestHelper;
 
 import java.util.List;
 

@@ -3,10 +3,10 @@ package com.arsmagica2.arsmagica2return.test;
 import com.arsmagica2.arsmagica2return.ArsMagicaAPIImpl;
 import com.arsmagica2.arsmagica2return.api.ArsMagicaAPI;
 import net.minecraft.gametest.framework.GameTest;
-import net.neoforged.testframework.annotation.ForEachTest;
-import net.neoforged.testframework.annotation.TestHolder;
-import net.neoforged.testframework.gametest.EmptyTemplate;
-import net.neoforged.testframework.gametest.ExtendedGameTestHelper;
+import net.minecraftforge.testframework.annotation.ForEachTest;
+import net.minecraftforge.testframework.annotation.TestHolder;
+import net.minecraftforge.testframework.gametest.EmptyTemplate;
+import net.minecraftforge.testframework.gametest.ExtendedGameTestHelper;
 
 @ForEachTest(groups = ArsMagicaAPI.MOD_ID + ".api")
 public class ArsMagicaAPITest {

@@ -17,7 +17,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
-import net.neoforged.neoforge.client.model.data.ModelData;
+import net.minecraftforge.neoforge.client.model.data.ModelData;
 
 public class SpellRuneBER implements BlockEntityRenderer<SpellRuneBlockEntity> {
     private final BlockRenderDispatcher dispatcher;

@@ -10,7 +10,7 @@ import com.arsmagica2.arsmagica2return.common.block.sign.CustomHangingSignBlockE
 import com.arsmagica2.arsmagica2return.common.block.sign.CustomSignBlockEntity;
 import com.arsmagica2.arsmagica2return.common.block.spellrune.SpellRuneBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
-import net.neoforged.neoforge.registries.DeferredHolder;
+import net.minecraftforge.neoforge.registries.DeferredHolder;
 import org.jetbrains.annotations.ApiStatus.Internal;
 import org.jetbrains.annotations.ApiStatus.NonExtendable;
 

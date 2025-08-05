@@ -16,7 +16,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.ExtraCodecs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.neoforged.neoforge.registries.DeferredHolder;
+import net.minecraftforge.neoforge.registries.DeferredHolder;
 
 public record PrefabSpell(Component name, ISpell spell, ResourceLocation icon) implements IPrefabSpell {
     public static final String SPELL_PREFAB_NAME = "item." + ArsMagicaAPI.MOD_ID + ".spell.prefab.name";

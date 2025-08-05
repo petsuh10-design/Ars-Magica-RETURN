@@ -6,7 +6,7 @@ import com.arsmagica2.arsmagica2return.api.magic.IManaHelper;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.world.entity.player.Player;
-import net.neoforged.neoforge.client.gui.overlay.ExtendedGui;
+import net.minecraftforge.neoforge.client.gui.overlay.ExtendedGui;
 
 public final class ManaHUD extends AbstractHUD {
     public ManaHUD() {

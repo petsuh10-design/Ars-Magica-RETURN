@@ -34,7 +34,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.dimension.BuiltinDimensionTypes;
 import net.minecraft.world.level.gameevent.GameEvent;
-import net.neoforged.neoforge.common.Tags;
+import net.minecraftforge.neoforge.common.Tags;
 
 import java.util.List;
 

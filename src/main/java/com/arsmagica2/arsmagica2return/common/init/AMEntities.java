@@ -28,7 +28,7 @@ import com.arsmagica2.arsmagica2return.common.entity.WintersGrasp;
 import com.arsmagica2.arsmagica2return.common.entity.Zone;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
-import net.neoforged.neoforge.registries.DeferredHolder;
+import net.minecraftforge.neoforge.registries.DeferredHolder;
 import org.jetbrains.annotations.ApiStatus.Internal;
 import org.jetbrains.annotations.ApiStatus.NonExtendable;
 

@@ -8,8 +8,8 @@ import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerBlock;
 import net.minecraft.world.level.block.state.BlockState;
-import net.neoforged.neoforge.common.PlantType;
-import net.neoforged.neoforge.common.Tags;
+import net.minecraftforge.neoforge.common.PlantType;
+import net.minecraftforge.neoforge.common.Tags;
 
 public class TarmaRootBlock extends FlowerBlock {
     public TarmaRootBlock() {

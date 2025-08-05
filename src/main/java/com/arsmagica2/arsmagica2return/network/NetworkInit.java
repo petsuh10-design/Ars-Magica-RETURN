@@ -7,9 +7,9 @@ import com.arsmagica2.arsmagica2return.common.magic.MagicHelper;
 import com.arsmagica2.arsmagica2return.common.magic.ManaHelper;
 import com.arsmagica2.arsmagica2return.common.skill.SkillHelper;
 import com.arsmagica2.arsmagica2return.common.spell.SpellDataManager;
-import net.neoforged.bus.api.IEventBus;
-import net.neoforged.neoforge.network.event.RegisterPayloadHandlerEvent;
-import net.neoforged.neoforge.network.registration.IPayloadRegistrar;
+import net.minecraftforge.bus.api.IEventBus;
+import net.minecraftforge.neoforge.network.event.RegisterPayloadHandlerEvent;
+import net.minecraftforge.neoforge.network.registration.IPayloadRegistrar;
 
 public final class NetworkInit {
     private static final String NETWORK_VERSION = "5";

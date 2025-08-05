@@ -3,10 +3,10 @@ package com.arsmagica2.arsmagica2return.common.init;
 import com.arsmagica2.arsmagica2return.api.ArsMagicaAPI;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.material.Fluid;
-import net.neoforged.neoforge.client.extensions.common.IClientFluidTypeExtensions;
-import net.neoforged.neoforge.fluids.BaseFlowingFluid;
-import net.neoforged.neoforge.fluids.FluidType;
-import net.neoforged.neoforge.registries.DeferredHolder;
+import net.minecraftforge.neoforge.client.extensions.common.IClientFluidTypeExtensions;
+import net.minecraftforge.neoforge.fluids.BaseFlowingFluid;
+import net.minecraftforge.neoforge.fluids.FluidType;
+import net.minecraftforge.neoforge.registries.DeferredHolder;
 import org.jetbrains.annotations.ApiStatus.Internal;
 import org.jetbrains.annotations.ApiStatus.NonExtendable;
 

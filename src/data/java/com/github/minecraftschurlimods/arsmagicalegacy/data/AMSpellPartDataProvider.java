@@ -17,8 +17,8 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionUtils;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.neoforged.neoforge.common.Tags;
-import net.neoforged.neoforge.common.crafting.NBTIngredient;
+import net.minecraftforge.neoforge.common.Tags;
+import net.minecraftforge.neoforge.common.crafting.NBTIngredient;
 
 import java.util.EnumSet;
 

@@ -16,7 +16,7 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
-import net.neoforged.neoforge.entity.PartEntity;
+import net.minecraftforge.neoforge.entity.PartEntity;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
